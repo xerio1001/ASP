@@ -23,6 +23,56 @@ namespace MyMVCApplication.Controllers
             return View();
         }
 
+        public IActionResult MarkWithAK()
+        {
+            return View();
+        }
+
+        public IActionResult Sickmode()
+        {
+            return View();
+        }
+        public IActionResult Rooler()
+        {
+            return View();
+        }
+
+        public IActionResult BrennanHeart()
+        {
+            return View();
+        }
+
+        public IActionResult Coone()
+        {
+            return View();
+        }
+
+        public IActionResult Mandy()
+        {
+            return View();
+        }
+
+        public IActionResult PaulElstak()
+        {
+            return View();
+        }
+
+        public IActionResult RanD()
+        {
+            return View();
+        }
+
+        public IActionResult RadicalRedemption()
+        {
+            return View();
+        }
+
+        public IActionResult Sefa()
+        {
+            return View();
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

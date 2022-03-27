@@ -5,25 +5,110 @@
 
 <div class="custom-container">
 
-        <div id="artist-summup" class="col-2 text-light pt-2 pb-2">
-            <ul class="custom-list">
-                <li>Mark With A K</li>
-                <li>Sickmode</li>
-                <li>Rooler</li>
-            </ul>
+        <div id="artist-summup" class="col-2 text-light">
+
+            <div id="title-summup" class="pt-2">
+                <h1>Dj's</h1>
+            </div>
+
+            <hr>
+
+            <div id="list-artists">
+                <ul class="custom-list">
+                    <li>Mark With A K</li>
+                    <li>SickMode</li>
+                    <li>Rooler</li>
+                    <li>Ran-D</li>
+                    <li>Sefa</li>
+                </ul>
+                <ul class="custom-list">
+                    <li>Brennan Heart</li>
+                    <li>Mandy</li>
+                    <li>Coone</li>
+                    <li>Paul Elstak</li>
+                    <li>Radical Redemption</li>
+                </ul>
+            </div>
+
         </div>
 
-        <span class="placeholder col-2">
-            <img src="~/img/mark-with-a-k.jpg" class="img-fluid img-thumbnail" alt="Picture of Mark With A K"/>
-        </span>
+        <div class="row mt-2" style="margin-left: 0px; margin-right: 0px;">
 
-        <span class="placeholder col-2">
-            <img src="~/img/sickmode.jpg" class="img-fluid img-thumbnail" alt="Picture of Sickmode"/>
-        </span>
+            <!-- Fill the first 'col-2' so that it doesn't stick behind the black navbar on the left -->
+            <div class="col-2 invisible"></div>
+            <!-- -->
 
-        <span class="placeholder col-2">
-            <img src="~/img/rooler.png" class="img-fluid img-thumbnail" alt="Picture of Sickmode"/>
-        </span>
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="markWithAK">
+                    <img src="~/img/mark-with-a-k.jpg" class="img-fluid img-thumbnail" alt="Picture of Mark With A K"/>
+                </a>
+            </div>
+
+            <div class="col-2" >
+                <a asp-area="" asp-controller="Home" asp-action="Sickmode">
+                    <img src="~/img/sickmode.jpg" class="img-fluid img-thumbnail" alt="Picture of Sickmode"/>
+                </a>
+            </div>
+            
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="Rooler">
+                    <img src="~/img/rooler.png" class="img-fluid img-thumbnail" alt="Picture of Rooler"/>
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="RanD">
+                    <img src="~/img/ranD.jpg" class="img-fluid img-thumbnail" alt="Picture of Ran-D"/>
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="Sefa">
+                    <img src="~/img/sefa.jpg" class="img-fluid img-thumbnail" alt="Picture of Sefa"/>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- End Row 1 -->
+
+        <div class="row mt-2" style="margin-left: 0px; margin-right: 0px;">
+
+            <!-- Fill the first 'col-2' so that it doesn't stick behind the black navbar on the left -->
+            <div class="col-2 invisible"></div>
+            <!-- -->
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="BrennanHeart">
+                    <img src="~/img/brennanHeart.jpeg" class="img-fluid img-thumbnail" alt="Picture of Brennan Heart"/>
+                </a>
+            </div>
+
+            <div class="col-2" >
+                <a asp-area="" asp-controller="Home" asp-action="Mandy">
+                    <img src="~/img/mandy.jpg" class="img-fluid img-thumbnail" alt="Picture of Mandy"/>
+                </a>
+            </div>
+            
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="Coone">
+                    <img src="~/img/coone.jpg" class="img-fluid img-thumbnail" alt="Picture of Coone"/>
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="PaulElstak">
+                    <img src="~/img/paulElstak.jpg" class="img-fluid img-thumbnail" alt="Picture of Paul Elstak"/>
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="RadicalRedemption">
+                    <img src="~/img/radicalRedemption.jpg" class="img-fluid img-thumbnail" alt="Picture of Radical Redemption"/>
+                </a>
+            </div>
+
+        </div>
 
 </div>
 
