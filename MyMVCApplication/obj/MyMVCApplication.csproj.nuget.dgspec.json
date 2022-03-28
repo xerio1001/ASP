@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\MyMVCApplication.csproj": {}
+    "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\MyMVCApplication.csproj": {}
   },
   "projects": {
-    "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\MyMVCApplication.csproj": {
+    "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\MyMVCApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\MyMVCApplication.csproj",
+        "projectUniqueName": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\MyMVCApplication.csproj",
         "projectName": "MyMVCApplication",
-        "projectPath": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\MyMVCApplication.csproj",
-        "packagesPath": "C:\\Users\\dario\\.nuget\\packages\\",
-        "outputPath": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\obj\\",
+        "projectPath": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\MyMVCApplication.csproj",
+        "packagesPath": "C:\\Users\\JUD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JUD\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
