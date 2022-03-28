@@ -12,6 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow" style="background-color: rgb(30, 215, 96);">
             <div class="container-fluid">
+                <img src="~/img/Music-Stash-Logo.png" style="margin-right: 10px;"/>
                 <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Music Stash</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +31,7 @@
             </div>
         </nav>
     </header>
-    <div class="row">
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -38,7 +39,7 @@
 
     <footer class="footer text-muted" style="background-color: rgb(30, 215, 96);">
         <div class="container text-dark">
-            &copy; 2022 - MyMVCApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - MusicStash - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
