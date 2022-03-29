@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "H1EMXnGETH0HXhgpIaaX4prnxjgQJernemCTnq9AjtY=",
+  "Hash": "cbaWNtkkj3xG3c9K20cuQzhE3rR72WFoKotFCMBBHTQ=",
   "Source": "MyMVCApplication",
   "BasePath": "_content/MyMVCApplication",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyMVCApplication.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\audio\\MarkWithaKftXillionsOutOfMyMind.mp3",
+      "SourceId": "MyMVCApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\",
+      "BasePath": "_content/MyMVCApplication",
+      "RelativePath": "audio/MarkWithaKftXillionsOutOfMyMind.mp3",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\audio\\MarkWithaKftXillionsOutOfMyMind.mp3"
+    },
+    {
+      "Identity": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\audio\\Sickmode - Klaplongen Official Video.mp3",
+      "SourceId": "MyMVCApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\",
+      "BasePath": "_content/MyMVCApplication",
+      "RelativePath": "audio/Sickmode - Klaplongen Official Video.mp3",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\audio\\Sickmode - Klaplongen Official Video.mp3"
     },
     {
       "Identity": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\css\\site.css",
