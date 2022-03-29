@@ -2,77 +2,85 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="row" style="margin-left: 0px; margin-right: 0px;">
+    <div class="col-2">
 
-<div class="custom-container">
+        <div class="row vh-100">
+            <div class="text-light" style="background-color: rgb(0, 0, 0);">
 
-        <div id="artist-summup" class="col-2 text-light">
+                <div class="pt-2">
+                    <h1>Dj's</h1>
+                </div>
 
-            <div id="title-summup" class="pt-2">
-                <h1>Dj's</h1>
+                    <hr>
+
+                <div id="list-artists">
+                    <ul class="custom-list">
+                        <li>Mark With A K</li>
+                        <li>SickMode</li>
+                        <li>Rooler</li>
+                        <li>Ran-D</li>
+                        <li>Sefa</li>
+                        <li>Brennan Heart</li>
+                    </ul>
+                    <ul class="custom-list">
+                        <li>Mandy</li>
+                        <li>Coone</li>
+                        <li>Paul Elstak</li>
+                        <li>Radical Redemption</li>
+                        <li>Frontliner</li>
+                        <li>Crypsis</li>
+                    </ul>
+
+                </div>
             </div>
-
-            <hr>
-
-            <div id="list-artists">
-                <ul class="custom-list">
-                    <li>Mark With A K</li>
-                    <li>SickMode</li>
-                    <li>Rooler</li>
-                    <li>Ran-D</li>
-                    <li>Sefa</li>
-                </ul>
-                <ul class="custom-list">
-                    <li>Brennan Heart</li>
-                    <li>Mandy</li>
-                    <li>Coone</li>
-                    <li>Paul Elstak</li>
-                    <li>Radical Redemption</li>
-                </ul>
-            </div>
-
         </div>
 
-        <div class="row mt-2" style="margin-left: 0px; margin-right: 0px;">
+    </div>
 
-            <!-- Fill the first 'col-2' so that it doesn't stick behind the black navbar on the left -->
-            <div class="col-2 invisible"></div>
-            <!-- -->
+    <div class="col-10">
 
+        <div class="row mt-2">
             <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="markWithAK">
+                <a asp-area="" asp-controller="Home" asp-action="markWithAK" target="_blank">
                     <img src="~/img/mark-with-a-k.jpg" class="img-fluid img-thumbnail" alt="Picture of Mark With A K"/>
                 </a>
             </div>
 
-            <div class="col-2" >
-                <a asp-area="" asp-controller="Home" asp-action="Sickmode">
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="Sickmode" target="_blank">
                     <img src="~/img/sickmode.jpg" class="img-fluid img-thumbnail" alt="Picture of Sickmode"/>
                 </a>
             </div>
             
             <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="Rooler">
+                <a asp-area="" asp-controller="Home" asp-action="Rooler" target="_blank">
                     <img src="~/img/rooler.png" class="img-fluid img-thumbnail" alt="Picture of Rooler"/>
                 </a>
             </div>
 
             <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="RanD">
+                <a asp-area="" asp-controller="Home" asp-action="RanD" target="_blank">
                     <img src="~/img/ranD.jpg" class="img-fluid img-thumbnail" alt="Picture of Ran-D"/>
                 </a>
             </div>
 
             <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="Sefa">
+                <a asp-area="" asp-controller="Home" asp-action="Sefa" target="_blank">
                     <img src="~/img/sefa.jpg" class="img-fluid img-thumbnail" alt="Picture of Sefa"/>
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="BrennanHeart" target="_blank">
+                    <img src="~/img/brennanHeart.jpeg" class="img-fluid img-thumbnail" alt="Picture of Brennan Heart"/>
                 </a>
             </div>
 
         </div>
 
-        <!-- End Row 1 -->
-        <div class="row mt-2" style="margin-left: 0px; margin-right: 0px;">
-            <div class="col-2 invisible"></div>
+
+        <div class="row mt-2">
 
             <div class="col-2 text-light">
                 <h4>Mark With A K</h4>
@@ -93,53 +101,55 @@
             <div class="col-2 text-light">
                 <h4>Sefa</h4>
             </div>
-        </div>
 
-        <div class="row mt-2" style="margin-left: 0px; margin-right: 0px;">
-
-            <!-- Fill the first 'col-2' so that it doesn't stick behind the black navbar on the left -->
-            <div class="col-2 invisible"></div>
-            <!-- -->
-
-            <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="BrennanHeart">
-                    <img src="~/img/brennanHeart.jpeg" class="img-fluid img-thumbnail" alt="Picture of Brennan Heart"/>
-                </a>
+            <div class="col-2 text-light">
+                <h4>Brennan Heart</h4>
             </div>
 
+        </div>
+
+
+        <div class="row mt-2">
+
             <div class="col-2" >
-                <a asp-area="" asp-controller="Home" asp-action="Mandy">
+                <a asp-area="" asp-controller="Home" asp-action="Mandy" target="_blank">
                     <img src="~/img/mandy.jpg" class="img-fluid img-thumbnail" alt="Picture of Mandy"/>
                 </a>
             </div>
             
             <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="Coone">
+                <a asp-area="" asp-controller="Home" asp-action="Coone" target="_blank">
                     <img src="~/img/coone.jpg" class="img-fluid img-thumbnail" alt="Picture of Coone"/>
                 </a>
             </div>
 
             <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="PaulElstak">
+                <a asp-area="" asp-controller="Home" asp-action="PaulElstak" target="_blank">
                     <img src="~/img/paulElstak.jpg" class="img-fluid img-thumbnail" alt="Picture of Paul Elstak"/>
                 </a>
             </div>
 
             <div class="col-2">
-                <a asp-area="" asp-controller="Home" asp-action="RadicalRedemption">
+                <a asp-area="" asp-controller="Home" asp-action="RadicalRedemption" target="_blank">
                     <img src="~/img/radicalRedemption.jpg" class="img-fluid img-thumbnail" alt="Picture of Radical Redemption"/>
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="Frontliner" target="_blank">
+                    <img src="~/img/frontliner.jpg" class="img-fluid img-thumbnail" alt="Picture of Frontliner"/>
+                </a>
+            </div>
+
+            <div class="col-2">
+                <a asp-area="" asp-controller="Home" asp-action="Crypsis" target="_blank">
+                    <img src="~/img/Crypsis2.jpg" class="img-fluid img-thumbnail" alt="Picture of Crypsis"/>
                 </a>
             </div>
 
         </div>
 
-        <div class="row mt-2" style="margin-left: 0px; margin-right: 0px;">
-
-            <div class="col-2 invisible"></div>
-
-            <div class="col-2 text-light">
-                <h4>Brennan Heart</h4>
-            </div>
+        <div class="row mt-2">
 
             <div class="col-2 text-light">
                 <h4>Mandy</h4>
@@ -157,7 +167,17 @@
                 <h4>Radical Redemption</h4>
             </div>
 
+            <div class="col-2 text-light">
+                <h4>Frontliner</h4>
+            </div>
+
+            <div class="col-2 text-light">
+                <h4>Crypsis</h4>
+            </div>
+
         </div>
 
+    </div>
 </div>
+
 

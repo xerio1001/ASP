@@ -72,6 +72,16 @@ namespace MyMVCApplication.Controllers
             return View();
         }
 
+        public IActionResult Crypsis()
+        {
+            return View();
+        }
+
+        public IActionResult Frontliner()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WdtxYReAZlBmwKAamD2w13ST6hjefG7z0lZoxFg1mDQ=",
+  "Hash": "H1EMXnGETH0HXhgpIaaX4prnxjgQJernemCTnq9AjtY=",
   "Source": "MyMVCApplication",
   "BasePath": "_content/MyMVCApplication",
   "Mode": "Default",
@@ -117,6 +117,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\coone.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\img\\Crypsis2.jpg",
+      "SourceId": "MyMVCApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\",
+      "BasePath": "_content/MyMVCApplication",
+      "RelativePath": "img/Crypsis2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Crypsis2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\img\\frontliner.jpg",
+      "SourceId": "MyMVCApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\",
+      "BasePath": "_content/MyMVCApplication",
+      "RelativePath": "img/frontliner.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\frontliner.jpg"
     },
     {
       "Identity": "C:\\Users\\JUD\\Documents\\ASP\\MyMVCApplication\\wwwroot\\img\\mandy.jpg",
