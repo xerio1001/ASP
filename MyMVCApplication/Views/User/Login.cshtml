@@ -1,33 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Login";
 }
-<div class="row text-light">
-    <h1>Login</h1>
+<div class="row text-light text-center" style="margin: 0px 0px;">
+	<h1>Login</h1>
 </div>
 
-<div class="text-light">
-    <form method="POST" action="#">
-        <div class="row">
-            <div class="col-2">
-                <label for="username">Username:</label>
-            </div>
-            <div class="col">
-                <input id="text-username" type="text" name="username" placeholder="Username" required>
-            </div>
-        </div>
+<div class="row text-light mt-3 justify-content-center" style="margin: 0px 0px;">
+	<div class="col-4">
+		<form>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email Address:</label>
+				<input type="email" class="form-control rounded border-style-input" id="email" placeholder="example@outlook.com">
+			</div>
 
-        <div class="row mt-2">
-            <div class="col-2 end-0">
-                <label for="password">Password:</label>
-            </div>
-            <div class="col">
-                    <input type="password" name="password" placeholder="Password" required>
-            </div>
-        </div>
-        <div class="row mt-2 start-0">
-            <div class="col">
-                <input type="submit" value="Login" class="btn btn-light">
-            </div>
-        </div>
-    </form>
+			<div class="mb-3">
+				<label for="password" class="form-label">Password:</label>
+				<input type="password" class="form-control rounded border-style-input" id="password" placeholder="Password">
+			</div>
+
+			<div class="mb-3 text-center">
+				<button type="submit" class="btn btn-light button-submit-bg">Register</button>
+				<button type="reset" class="btn btn-light button-submit-bg">Reset</button>
+			</div>
+		</form>
+	</div>
 </div>
