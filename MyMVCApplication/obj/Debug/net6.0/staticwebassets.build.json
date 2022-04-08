@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cEAcett5IQXu84aFBBOLsBUFL9Tuz48+BOawcDaq9tk=",
+  "Hash": "l10bB1bu0B0yLcSVKW3YhAWhs6R37dEyI3LfDFbMbCg=",
   "Source": "MyMVCApplication",
   "BasePath": "_content/MyMVCApplication",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\obj\\Debug\\net6.0\\scopedcss\\bundle\\MyMVCApplication.styles.css",
-      "SourceId": "MyMVCApplication",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/MyMVCApplication",
-      "RelativePath": "MyMVCApplication.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\obj\\Debug\\net6.0\\scopedcss\\bundle\\MyMVCApplication.styles.css"
-    },
-    {
-      "Identity": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyMVCApplication.bundle.scp.css",
-      "SourceId": "MyMVCApplication",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/MyMVCApplication",
-      "RelativePath": "MyMVCApplication.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MyMVCApplication.bundle.scp.css"
-    },
     {
       "Identity": "D:\\Bureaublad\\folders\\school\\ASP\\MyMVCApplication\\wwwroot\\audio\\DOMINATION (SEFA Remix).mp3",
       "SourceId": "MyMVCApplication",

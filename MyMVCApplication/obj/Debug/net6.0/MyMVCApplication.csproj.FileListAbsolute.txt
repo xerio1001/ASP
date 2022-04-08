@@ -38,13 +38,9 @@ D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplicat
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplication.AssemblyInfo.cs
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplication.csproj.CoreCompileInputs.cache
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplication.MvcApplicationPartsAssemblyInfo.cache
-D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplication.RazorAssemblyInfo.cache
-D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplication.RazorAssemblyInfo.cs
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\staticwebassets.build.json
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\staticwebassets.development.json
-D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\scopedcss\bundle\MyMVCApplication.styles.css
-D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\scopedcss\projectbundle\MyMVCApplication.bundle.scp.css
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplication.dll
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\ref\MyMVCApplication.dll
 D:\Bureaublad\folders\school\ASP\MyMVCApplication\obj\Debug\net6.0\MyMVCApplication.pdb
