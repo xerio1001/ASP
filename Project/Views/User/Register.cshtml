@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Registreer";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-3"><!--Filler--></div>
+
+        <div class="col-6">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Email address:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Uw E-mail adres hier.">
+                    <div id="emailHelp" class="form-text">
+                        Uw E-mail adres wordt alleen gebruikt voor in te loggen.
+                    </div>
+                </div>
+
+                 <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
+                      <option selected>Selecteer uw functie</option>
+                      <option value="docent">Docent</option>
+                      <option value="leerling">Leerling</option>
+                </select>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Uw wachtwoord hier.">
+                </div>
+                <button type="submit" class="btn btn-primary" asp-controller="User" asp-action="processRegister">Registreer</button>
+                <a class="btn btn-primary" role="button" asp-controller="User" asp-action="Login">Ga naar login</a>
+            </form>
+        </div>
+
+        <div class="col-3"><!--Filler--></div>
+    </div>
+
+</div>
