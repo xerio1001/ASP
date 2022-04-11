@@ -4,26 +4,16 @@ using System.Diagnostics;
 
 namespace Project.Controllers
 {
-    public class HomeController : Controller
+    public class StockController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public StockController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult Stock()
+        public IActionResult pasStockAan()
         {
             return View();
         }
