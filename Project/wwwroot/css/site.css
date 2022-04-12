@@ -16,3 +16,30 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.m-10{
+    margin-top: 10%;
+}
+
+hr{
+    width: 100%;
+    border: 2px dotted #000000;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.animate {
+    animation: mymove 4s infinite;
+}
+
+@keyframes mymove {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(90deg);}
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg);}
+    100% { transform: rotate(360deg);}
+}
+
+#images-for-stock:hover {
+    width: 101.5%;
+}

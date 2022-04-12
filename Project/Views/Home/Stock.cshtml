@@ -4,38 +4,67 @@
 
 <div class="container-fluid text-center">
 
-    <div class="row">
+    <div class="row m-10">
         <div class="col-4">
-            <a class="text-dark" asp-controller="Stock" asp-action="pasStockAan">
-                <img src="~/img/tandwiel.png" /> 
-            </a>
-            <br />
-            <span>Pas stock aan</span>
+            <div id="images-for-stock" class=".transform-origin-tp">
+                <a class="text-dark" asp-controller="Stock" asp-action="overzichtLeveranciers">
+                    <img src="~/img/supplier.png" style="width: 50%; height: auto;" /> 
+                </a>
+                <br />
+                <span>Overzicht leveranciers</span>
+            </div>
         </div>
 
         <div class="col-4">
-            <img src="" /> <br />
-            <span>Overzicht leveranciers</span>
+            <div id="images-for-stock">
+                <a class="text-dark" asp-controller="Stock" asp-action="pasStockAan">
+                    <img src="~/img/tandwiel.png" style="width: 50%; height: auto;" class="animate"/> 
+                </a>
+                <br />
+                <span>Pas stock aan</span>
+            </div>
         </div>
 
         <div class="col-4">
-            <img src="" /> <br />
-            <span>Overzicht stock</span>
+            <div id="images-for-stock">
+                <a class="text-dark" asp-controller="Stock" asp-action="overzichtStock">
+                    <img src="~/img/eye.png" style="width: 50%; height: auto;" /> 
+                </a>
+                <br />
+                <span>Overzicht stock</span>
+            </div>
         </div>
     </div>
 
-    <div class="row mt-2">
+    <div class="row mt-5">
         <div class="col-4">
-            <img src="" /> <br />
-            <span>Bestel</span>
+            <div id="images-for-stock">
+                <a class="text-dark" asp-controller="Stock" asp-action="bestel">
+                    <img src="~/img/order.png" style="width: 50%; height: auto;" /> 
+                </a>
+                <br />
+                <span>Bestel</span>
+            </div>
         </div>
 
         <div class="col-4">
-            <img src="" /> <br />
+            <div id="images-for-stock">
+                <a class="text-dark" asp-controller="Stock" asp-action="voegProductToe">
+                    <img src="~/img/addProduct.png" style="width: 50%; height: auto;" /> 
+                </a>
+                <br />
+                <span>Voeg producten toe</span>
+            </div>
         </div>
 
         <div class="col-4">
-            <img src="" /> <br />
+            <div id="images-for-stock">
+                <a class="text-dark" asp-controller="Stock" asp-action="voegLeverancierToe">
+                    <img src="~/img/addSupplier.png" style="width: 50%; height: auto;" /> 
+                </a>
+                <br />
+                <span>Voeg leveranciers toe</span>
+            </div>
         </div>
     </div>
 

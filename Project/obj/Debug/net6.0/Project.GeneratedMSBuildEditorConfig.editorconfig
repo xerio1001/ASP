@@ -35,8 +35,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Bureaublad/folders/school/ASP/Project/Views/Stock/bestel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tcYmVzdGVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Bureaublad/folders/school/ASP/Project/Views/Stock/overzichtLeveranciers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tcb3ZlcnppY2h0TGV2ZXJhbmNpZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Bureaublad/folders/school/ASP/Project/Views/Stock/overzichtStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tcb3ZlcnppY2h0U3RvY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Bureaublad/folders/school/ASP/Project/Views/Stock/pasStockAan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tccGFzU3RvY2tBYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Bureaublad/folders/school/ASP/Project/Views/Stock/voegLeverancierToe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tcdm9lZ0xldmVyYW5jaWVyVG9lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Bureaublad/folders/school/ASP/Project/Views/Stock/voegProductToe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tcdm9lZ1Byb2R1Y3RUb2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Bureaublad/folders/school/ASP/Project/Views/User/Login.cshtml]

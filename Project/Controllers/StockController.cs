@@ -18,6 +18,31 @@ namespace Project.Controllers
             return View();
         }
 
+        public IActionResult overzichtStock()
+        {
+            return View();
+        }
+
+        public IActionResult overzichtLeveranciers()
+        {
+            return View();
+        }
+
+        public IActionResult bestel()
+        {
+            return View();
+        }
+
+        public IActionResult voegProductToe()
+        {
+            return View();
+        }
+
+        public IActionResult voegLeverancierToe()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
