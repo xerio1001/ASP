@@ -28,9 +28,9 @@ namespace Project.Controllers
             return View();
         }
 
-        public IActionResult processRegister()
+        public IActionResult processRegister(string email, string password)
         {
-            return View();
+            return Content($"Hello: email{ email } password{ password }");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -2,12 +2,78 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container text-center">
+<div class="container-fluid m-auto">
 
-    <div class="row">
+    <div class="row text-center">
         <div class="col">
             <h1>Welkom</h1>
-            <h4>Bekijk en beheer uw stock hier!</h4>
+            <hr id="welcome-page-hr"/>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 text-end"> 
+            <a class="text-dark" asp-controller="Stock" asp-action="overzichtStock">
+                <img src="~/img/eye.png" style="width: 40%; height: auto;" /> 
+            </a>
+        </div>
+        <div class="col-6 text-start padding-top-7-5p">
+            <h1>Overzicht stock</h1>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 text-end padding-top-7-5p"> 
+            <h1>Overzicht leveranciers</h1> 
+        </div>
+        <div class="col-6 text-start">
+            <a class="text-dark" asp-controller="Stock" asp-action="overzichtLeveranciers">
+                <img src="~/img/supplier.png" style="width: 40%; height: auto;" /> 
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 text-end"> 
+            <a class="text-dark" asp-controller="Stock" asp-action="pasStockAan">
+                <img src="~/img/tandwiel.png" style="width: 40%; height: auto;" class="animate"/> 
+            </a>
+        </div>
+        <div class="col-6 text-start padding-top-7-5p">
+            <h1>Pas stock aan</h1>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 text-end padding-top-7-5p">
+            <h1>Bestel</h1>
+        </div>
+        <div class="col-6 text-start"> 
+            <a class="text-dark" asp-controller="Stock" asp-action="bestel">
+                <img src="~/img/order.png" style="width: 40%; height: auto;" /> 
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 text-end"> 
+            <a class="text-dark" asp-controller="Stock" asp-action="voegProductToe">
+                <img src="~/img/addProduct.png" style="width: 40%; height: auto;" /> 
+            </a>
+        </div>
+         <div class="col-6 text-start padding-top-7-5p">
+            <h1>Product toevoegen</h1>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 text-end padding-top-7-5p">
+            <h1>Leverancier toevoegen</h1>
+        </div>
+        <div class="col-6 text-start"> 
+            <a class="text-dark" asp-controller="Stock" asp-action="voegLeverancierToe">
+                <img src="~/img/addSupplier.png" style="width: 40%; height: auto;" /> 
+            </a>
         </div>
     </div>
 

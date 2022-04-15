@@ -1,26 +1,37 @@
 ﻿@{
     ViewData["Title"] = "Log in";
+
+    //if (IsPost){
+    //    string email = Request.Form["email"];
+    //    string password = Request.Form["password"];
+    //}
 }
 
 <div class="container">
 
     <div class="row">
+        <div class="col-12 text-center">
+            <h1>Login</h1>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-3"><!--Filler--></div>
 
         <div class="col-6">
-            <form>
+            <form method="post" asp-controller="User" asp-action="Login">
                 <div class="mb-3">
                     <label for="exampleInputEmail" class="form-label">Email address:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Uw E-mail adres hier." required>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Uw E-mail adres hier." required>
                     <div id="emailHelp" class="form-text">
                         Uw E-mail adres wordt alleen gebruikt voor in te loggen.
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword" class="form-label">Password:</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Uw wachtwoord hier." required>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Uw wachtwoord hier." required>
                 </div>
-                <button type="submit" class="btn btn-primary" asp-controller="User" asp-action="processLogin">Log in</button>
+                <button type="submit" class="btn btn-primary">Log in</button>
                 </form>
         </div>
 

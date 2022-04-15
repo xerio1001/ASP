@@ -5,37 +5,27 @@
 <div class="container">
 
     <div class="row">
+        <div class="col-12 text-center">
+            <h1>Registreer</h1>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-3"><!--Filler--></div>
 
         <div class="col-6">
             <form>
                 <div class="mb-3">
-                    <label for="exampleInputEmail" class="form-label">Email address:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Uw E-mail adres hier." required>
+                    <label for="emailInput" class="form-label">Email address:</label>
+                    <input type="email" name="email" class="form-control" id="emailInput" placeholder="Uw E-mail adres hier." required>
                     <div id="emailHelp" class="form-text">
                         Uw E-mail adres wordt alleen gebruikt voor in te loggen.
                     </div>
                 </div>
 
-                 <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" name="funtion">
-                      <option selected>Selecteer uw functie</option>
-                      <option value="docent">Docent</option>
-                      <option value="leerling">Leerling</option>
-                </select>
-                @{
-                    if ("function" == "docent")
-                    {
-                    <div class="mb-3">
-                        <label for="InputCode" class="form-label">Docent Code: </label>
-                        <input type="text" class="form-control" id="InputCode" placeholder="Uw code hier voor bevestiging dat u een docent bent.">
-                    </div>
-                    }
-                }
-                
-
                 <div class="mb-3">
-                    <label for="exampleInputPassword" class="form-label">Password:</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Uw wachtwoord hier." required>
+                    <label for="passwordInput" class="form-label">Password:</label>
+                    <input type="password" name="password" class="form-control" id="passwordInput" placeholder="Uw wachtwoord hier." required>
                 </div>
                 <button type="submit" class="btn btn-primary" asp-controller="User" asp-action="processRegister">Registreer</button>
             </form>
