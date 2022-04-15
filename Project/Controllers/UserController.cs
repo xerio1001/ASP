@@ -23,14 +23,14 @@ namespace Project.Controllers
             return View();
         }
 
-        public IActionResult processLogin()
+        public IActionResult processLogin(string email, string password)
         {
-            return View();
+            return Content($"Hello: email { email } password { password }");
         }
 
         public IActionResult processRegister(string email, string password)
         {
-            return Content($"Hello: email{ email } password{ password }");
+            return Content($"Hello: email { email } password { password }");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
