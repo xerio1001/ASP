@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Registreer";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Registreer</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3"><!--Filler--></div>
+
+        <div class="col-6">
+            <form method="post" asp-controller="User" asp-action="processRegister">
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Email address:</label>
+                    <input type="email" name="email" class="form-control" id="emailInput" placeholder="Uw E-mail adres hier." required>
+                    <div id="emailHelp" class="form-text">
+                        Uw E-mail adres wordt alleen gebruikt voor in te loggen.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Password:</label>
+                    <input type="password" name="password" class="form-control" id="passwordInput" placeholder="Uw wachtwoord hier." required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registreer</button>
+            </form>
+        </div>
+
+        <div class="col-3"><!--Filler--></div>
+    </div>
+
+</div>

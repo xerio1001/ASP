@@ -59,3 +59,33 @@ hr {
     background-color: rgb(8, 163, 64);
     border: none;
 }
+
+/* Custom Music Card Layout*/
+.player{
+    position: relative;
+    width: 300px;
+    background-color: #f1f3f4;
+    border-radius: 20px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+}
+.player .imgbox{
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.player .imgbox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.player audio{
+    width: 100%;
+    outline: none;
+
+}
+/****/
