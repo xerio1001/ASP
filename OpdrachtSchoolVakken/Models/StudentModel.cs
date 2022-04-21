@@ -32,9 +32,16 @@
             _students.Add(student);
         }
 
-        public static void DeleteStudent(StudentModel student)
+        public static void DeleteStudent(string name)
         {
-            _students.Remove(student);
+            foreach (StudentModel student in _students)
+            {
+                if(student.Name == name)
+                {
+                    _students.Remove(student);
+                    break;
+                }
+            }
         }
     }
 }

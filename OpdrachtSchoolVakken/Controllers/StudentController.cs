@@ -71,19 +71,20 @@ namespace OpdrachtSchoolVakken.Controllers
         }
 
         // GET: StudentController/Delete/5
-        public ActionResult Delete(int id)
-        {
+        public ActionResult Delete(string name)
+        {   
+            StudentModel.DeleteStudent(name);
             return View();
         }
 
         // POST: StudentController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(string name, IFormCollection collection)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ListStudents));
             }
             catch
             {
