@@ -3,6 +3,7 @@
     public class StudentModel
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
 
         public int Age { get; set; }
@@ -12,8 +13,6 @@
         public string PhoneNumber { get; set; }
 
         public int CourseID { get; set; }
-
-        public List<int> Result { get; set; }
 
         private static List<StudentModel> _students = new List<StudentModel>();
 
@@ -33,9 +32,9 @@
             _students.Add(student);
         }
 
-        public static void DeleteStudent(int Id)
+        public static void DeleteStudent(StudentModel student)
         {
-            _students.RemoveAt(Id);
+            _students.Remove(student);
         }
     }
 }
