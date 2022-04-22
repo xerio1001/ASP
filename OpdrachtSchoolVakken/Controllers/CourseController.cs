@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OpdrachtSchoolVakken.Models;
 
 namespace OpdrachtSchoolVakken.Controllers
 {
@@ -8,11 +9,11 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: CourseController
         public ActionResult Index()
         {
-            return View();
+            return View(CourseModel.GetAllCourses());
         }
 
         // GET: CourseController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
             return View();
         }
@@ -30,6 +31,13 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
+                CourseModel course = new CourseModel();
+
+                course.Name = collection["Name"];
+                course.LessonID = collection["LessonID"];
+
+                CourseModel.AddCourse(course);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -39,18 +47,26 @@ namespace OpdrachtSchoolVakken.Controllers
         }
 
         // GET: CourseController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            return View(CourseModel.GetCourse(id));
         }
 
         // POST: CourseController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(string id, IFormCollection collection)
         {
             try
             {
+                CourseModel course = new CourseModel();
+
+                course.Id = id;
+                course.Name = collection["Name"];
+                course.LessonID = collection["LessonID"];
+
+                CourseModel.EditCourse(course);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -60,15 +76,16 @@ namespace OpdrachtSchoolVakken.Controllers
         }
 
         // GET: CourseController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            CourseModel.DeleteCourse(id);
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: CourseController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(string id, IFormCollection collection)
         {
             try
             {

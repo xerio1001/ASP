@@ -13,7 +13,7 @@ namespace OpdrachtSchoolVakken.Controllers
         }
 
         // GET: StudentController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
             return View();
         }
@@ -50,19 +50,31 @@ namespace OpdrachtSchoolVakken.Controllers
         }
 
         // GET: StudentController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+
+            return View(StudentModel.GetStudent(id));
         }
 
         // POST: StudentController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(string id, IFormCollection collection)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                StudentModel student = new StudentModel();
+
+                student.Id = id;
+                student.Name = collection["Name"];
+                student.Age = int.Parse(collection["Age"]);
+                student.Gender = collection["Gender"];
+                student.PhoneNumber = collection["Phonenumber"];
+                student.CourseID = int.Parse(collection["CourseID"]);
+
+                StudentModel.EditStudent(student);
+
+                return RedirectToAction(nameof(ListStudents));
             }
             catch
             {
@@ -71,10 +83,10 @@ namespace OpdrachtSchoolVakken.Controllers
         }
 
         // GET: StudentController/Delete/5
-        public ActionResult Delete(string name)
+        public ActionResult Delete(string id)
         {   
-            StudentModel.DeleteStudent(name);
-            return View();
+            StudentModel.DeleteStudent(id);
+            return RedirectToAction(nameof(ListStudents));
         }
 
         // POST: StudentController/Delete/5
