@@ -11,8 +11,10 @@
 
         static CourseModel()
         {
-            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "Junior Python Developer", LessonID = "0" });
-            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "Full Stack Webdeveloper", LessonID = "0" });
+            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "Python", });
+            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "C#/.Net", });
+            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "HTML5/CSS", });
+            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "SQL", });
         }
 
         public static List<CourseModel> GetAllCourses()

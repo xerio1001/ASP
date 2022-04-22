@@ -37,7 +37,7 @@ namespace OpdrachtSchoolVakken.Controllers
                 student.Age = int.Parse(collection["Age"]);
                 student.Gender = collection["Gender"];
                 student.PhoneNumber = collection["Phonenumber"];
-                student.CourseID = int.Parse(collection["CourseID"]);
+                student.Courses = collection["Courses"].ToList();
 
                 StudentModel.AddStudent(student);
 
@@ -70,7 +70,7 @@ namespace OpdrachtSchoolVakken.Controllers
                 student.Age = int.Parse(collection["Age"]);
                 student.Gender = collection["Gender"];
                 student.PhoneNumber = collection["Phonenumber"];
-                student.CourseID = int.Parse(collection["CourseID"]);
+                student.Courses = collection["CourseID"].ToList();
 
                 StudentModel.EditStudent(student);
 
