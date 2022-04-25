@@ -20,8 +20,8 @@
 
         static StudentModel()
         {
-            _students.Add(new StudentModel { Id = Guid.NewGuid().ToString(), Name = "Dario", Age = 20, Gender = "Male", PhoneNumber = "0123456789" });
-            _students.Add(new StudentModel { Id = Guid.NewGuid().ToString(), Name = "Jens", Age = 32, Gender = "Male", PhoneNumber = "547849464747" });
+            _students.Add(new StudentModel { Id = Guid.NewGuid().ToString(), Name = "Dario", Age = 20, Gender = "Male", PhoneNumber = "0123456789", Courses = {  } });
+            _students.Add(new StudentModel { Id = Guid.NewGuid().ToString(), Name = "Jens", Age = 32, Gender = "Male", PhoneNumber = "547849464747", Courses = {  } });
         }
 
         public List<string> GetCoursesId()
@@ -42,20 +42,12 @@
             return listCourses;
         }
 
-        public List<StudentModel> GetAllStudents()
+        public static List<StudentModel> GetAllStudents()
         {
-            StudentModel student = new StudentModel();
-
-            foreach (string course in student.Courses)
-            {
-                string v = $"{course} <br />";
-                _students.Add(Courses = v);
-            }
-
             return _students;
         }
 
-        public StudentModel GetStudent(string id)
+        public static StudentModel GetStudent(string id)
         {
             foreach (StudentModel student in _students)
             {
@@ -67,27 +59,17 @@
             return null;
         }
 
-        public void EditStudent(StudentModel student)
+        public void SaveStudent()
         {
-            foreach (StudentModel studentModel in _students)
-            {
-                if(studentModel.Id == student.Id)
-                {
-                    studentModel.Name = student.Name;
-                    studentModel.Age = student.Age;
-                    studentModel.Gender = student.Gender;
-                    studentModel.PhoneNumber = student.PhoneNumber;
-                    studentModel.Courses = student.Courses;
-                }
-            }
+            
         }
 
-        public void AddStudent(StudentModel student)
+        public static void AddStudent(StudentModel student)
         {
             _students.Add(student);
         }
 
-        public void DeleteStudent(string id)
+        public static void DeleteStudent(string id)
         {
             foreach (StudentModel student in _students)
             {

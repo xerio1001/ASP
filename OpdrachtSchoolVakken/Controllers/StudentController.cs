@@ -63,16 +63,12 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
-                StudentModel student = new StudentModel();
-
-                student.Id = id;
-                student.Name = collection["Name"];
-                student.Age = int.Parse(collection["Age"]);
-                student.Gender = collection["Gender"];
-                student.PhoneNumber = collection["Phonenumber"];
-                student.Courses = collection["CourseID"].ToList();
-
-                StudentModel.EditStudent(student);
+                StudentModel newStudent = StudentModel.GetAllStudents().Where(student => student.Id == id).First();
+                newStudent.Name = collection["Name"];
+                newStudent.Age = int.Parse(collection["Age"]);
+                newStudent.Gender = collection["Gender"];
+                newStudent.PhoneNumber = collection["PhoneNumber"];
+                newStudent.Courses = collection["Courses"].ToList();
 
                 return RedirectToAction(nameof(ListStudents));
             }
