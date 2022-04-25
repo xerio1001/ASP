@@ -2,19 +2,17 @@
 {
     public class CourseModel
     {
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Name { get; set; }
-
-        public string LessonID { get; set; }
 
         private static List<CourseModel> _course = new List<CourseModel>();
 
         static CourseModel()
         {
-            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "Python", });
-            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "C#/.Net", });
-            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "HTML5/CSS", });
-            _course.Add(new CourseModel { Id = Guid.NewGuid().ToString(), Name = "SQL", });
+            _course.Add(new CourseModel { Name = "Python" });
+            _course.Add(new CourseModel { Name = "C#/.Net" });
+            _course.Add(new CourseModel { Name = "HTML5/CSS" });
+            _course.Add(new CourseModel { Name = "SQL" });
         }
 
         public static List<CourseModel> GetAllCourses()
@@ -36,14 +34,7 @@
 
         public static void EditCourse(CourseModel course)
         {
-            foreach (CourseModel courseModel in _course)
-            {
-                if (courseModel.Id == course.Id)
-                {
-                    courseModel.Name = course.Name;
-                    courseModel.LessonID = course.LessonID;
-                }
-            }
+            throw new NotImplementedException();
         }
 
         public static void AddCourse(CourseModel course)

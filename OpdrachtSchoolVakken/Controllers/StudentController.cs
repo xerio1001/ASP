@@ -52,7 +52,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: StudentController/Edit/5
         public ActionResult Edit(string id)
         {
-
+            ViewBag.courses = CourseModel.GetAllCourses();
             return View(StudentModel.GetStudent(id));
         }
 
@@ -63,12 +63,24 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
+                List<string> courseId = new List<string>();
+
                 StudentModel newStudent = StudentModel.GetAllStudents().Where(student => student.Id == id).First();
                 newStudent.Name = collection["Name"];
                 newStudent.Age = int.Parse(collection["Age"]);
                 newStudent.Gender = collection["Gender"];
                 newStudent.PhoneNumber = collection["PhoneNumber"];
-                newStudent.Courses = collection["Courses"].ToList();
+
+                foreach (var course in CourseModel.GetAllCourses())
+                {
+                    //bool myBool = Convert.ToBoolean(collection[course.Id].Split(',')[0]);
+
+                    if (collection[course.Id].IsChecked())
+                    {
+                        courseId.Add(course.Id);
+                    }
+                }
+                newStudent.Courses = courseId;
 
                 return RedirectToAction(nameof(ListStudents));
             }

@@ -34,7 +34,6 @@ namespace OpdrachtSchoolVakken.Controllers
                 CourseModel course = new CourseModel();
 
                 course.Name = collection["Name"];
-                course.LessonID = collection["LessonID"];
 
                 CourseModel.AddCourse(course);
 
@@ -59,13 +58,8 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
-                CourseModel course = new CourseModel();
-
-                course.Id = id;
-                course.Name = collection["Name"];
-                course.LessonID = collection["LessonID"];
-
-                CourseModel.EditCourse(course);
+                CourseModel newCourse = CourseModel.GetAllCourses().Where(course => course.Id == id).First();
+                newCourse.Name = collection["Name"];
 
                 return RedirectToAction(nameof(Index));
             }
