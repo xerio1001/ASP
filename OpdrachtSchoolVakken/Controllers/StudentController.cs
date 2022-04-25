@@ -71,16 +71,16 @@ namespace OpdrachtSchoolVakken.Controllers
                 newStudent.Gender = collection["Gender"];
                 newStudent.PhoneNumber = collection["PhoneNumber"];
 
-                foreach (var course in CourseModel.GetAllCourses())
-                {
-                    //bool myBool = Convert.ToBoolean(collection[course.Id].Split(',')[0]);
+                var selectedItems = collection.Where(x => x.IsChecked);
 
-                    if (collection[course.Id].IsChecked())
-                    {
-                        courseId.Add(course.Id);
-                    }
-                }
-                newStudent.Courses = courseId;
+                //foreach (var course in CourseModel.GetAllCourses())
+                //{
+                //    if (collection[course.Id] == "true")
+                //    {
+                //        courseId.Add(course.Id);
+                //    }
+                //}
+                //newStudent.Courses = courseId;
 
                 return RedirectToAction(nameof(ListStudents));
             }
