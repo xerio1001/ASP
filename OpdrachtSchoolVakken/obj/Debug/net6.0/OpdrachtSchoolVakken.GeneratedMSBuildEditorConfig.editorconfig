@@ -51,8 +51,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxMaXN0U3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/Teacher/ListTeachers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxMaXN0VGVhY2hlcnMuY3NodG1s
+[C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/_ViewImports.cshtml]

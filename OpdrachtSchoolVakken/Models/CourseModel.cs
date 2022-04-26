@@ -4,6 +4,7 @@
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Name { get; set; }
+        public string Teacher { get; set; }
 
         private static List<CourseModel> _course = new List<CourseModel>();
 

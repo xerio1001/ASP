@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<OpdrachtSchoolVakken.Models.StudentModel>
 
 @{
-    ViewData["Title"] = "ListStudents";
+    ViewData["Title"] = "Students";
 }
 
 <h1>Students</h1>
@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Courses)
+                @item.StringCourseNames()
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
@@ -57,3 +57,4 @@
         }
     </tbody>
 </table>
+

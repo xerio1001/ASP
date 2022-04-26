@@ -1,7 +1,7 @@
 ﻿@model OpdrachtSchoolVakken.Models.StudentModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit student";
 }
 
 <h1>Edit</h1>
@@ -43,10 +43,7 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             
-            @foreach(CourseModel course in ViewBag.courses)
-            {
-                @Html.CheckBox(course.Id) @course.Name <br />
-            }
+            @Html.ListBoxFor(model => model.Courses, (MultiSelectList)ViewBag.courses, new{multiple = "multiple", @class = "listbox"})
 
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using OpdrachtSchoolVakken.Models;
 
 namespace OpdrachtSchoolVakken.Controllers
@@ -9,7 +10,8 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: StudentController
         public ActionResult ListStudents()
         {
-            return View(StudentModel.GetAllStudents());
+            List<StudentModel> students = StudentModel.GetAllStudents();
+            return View(students);
         }
 
         // GET: StudentController/Details/5
@@ -21,6 +23,9 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: StudentController/Create
         public ActionResult CreateNew()
         {
+            List<CourseModel> courses = CourseModel.GetAllCourses();
+            MultiSelectList courseList = new MultiSelectList(courses, "Id", "Name");
+            ViewBag.courses = courseList;
             return View();
         }
 
@@ -52,7 +57,10 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: StudentController/Edit/5
         public ActionResult Edit(string id)
         {
-            ViewBag.courses = CourseModel.GetAllCourses();
+            List<CourseModel> courses = CourseModel.GetAllCourses();
+            MultiSelectList courseList = new MultiSelectList(courses, "Id", "Name");
+
+            ViewBag.courses = courseList;
             return View(StudentModel.GetStudent(id));
         }
 
@@ -63,24 +71,12 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
-                List<string> courseId = new List<string>();
-
                 StudentModel newStudent = StudentModel.GetAllStudents().Where(student => student.Id == id).First();
                 newStudent.Name = collection["Name"];
                 newStudent.Age = int.Parse(collection["Age"]);
                 newStudent.Gender = collection["Gender"];
                 newStudent.PhoneNumber = collection["PhoneNumber"];
-
-                var selectedItems = collection.Where(x => x.IsChecked);
-
-                //foreach (var course in CourseModel.GetAllCourses())
-                //{
-                //    if (collection[course.Id] == "true")
-                //    {
-                //        courseId.Add(course.Id);
-                //    }
-                //}
-                //newStudent.Courses = courseId;
+                newStudent.Courses = collection["Courses"].ToList();
 
                 return RedirectToAction(nameof(ListStudents));
             }
