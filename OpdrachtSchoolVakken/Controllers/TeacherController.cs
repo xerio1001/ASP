@@ -42,7 +42,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: TeacherController/Edit/5
         public ActionResult Edit(string id)
         {
-            return View();
+            return View(TeacherModel.GetTeacher(id));
         }
 
         // POST: TeacherController/Edit/5
