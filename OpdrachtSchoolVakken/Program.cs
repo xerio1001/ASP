@@ -1,4 +1,9 @@
+using DBlibrary.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<StudentService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

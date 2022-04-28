@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DBlibrary.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OpdrachtSchoolVakken.Models;
@@ -7,10 +8,16 @@ namespace OpdrachtSchoolVakken.Controllers
 {
     public class StudentController : Controller
     {
+        private readonly StudentService studentService;
+
+        public StudentController(StudentService studentService)
+        {
+            this.studentService = studentService;
+        }
         // GET: StudentController
         public ActionResult ListStudents()
         {
-            List<StudentModel> students = StudentModel.GetAllStudents();
+            List<StudentModel> students = StudentService.Get();
             return View(students);
         }
 
