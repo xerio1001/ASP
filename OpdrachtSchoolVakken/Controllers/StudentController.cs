@@ -27,8 +27,9 @@ namespace OpdrachtSchoolVakken.Controllers
 
         // GET: StudentController/Details/5
         public ActionResult Details(string id)
-        {
+        { 
             var student = studentService.GetOne(id);
+
             return View(student);
         }
 

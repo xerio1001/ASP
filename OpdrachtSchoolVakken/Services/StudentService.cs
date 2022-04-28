@@ -44,5 +44,14 @@ namespace OpdrachtSchoolVakken.Services
         {
             _students.DeleteOne(student => student.Id == id);
         }
+
+        public List<string> GetCoursesForStudent()
+        {
+            List<CourseModel> allCourses = courseService.GetAllCourses();
+
+            List<string> listCourses = allCourses.Where(c => Courses.Contains(c.Id)).Select(c => c.Name).ToList();
+
+            return listCourses;
+        }
     }
 }
