@@ -34,7 +34,7 @@ namespace OpdrachtSchoolVakken.Models
 
         [DisplayName("Results")]
         [BsonElement("results")]
-        public Dictionary<string, int> Results { get; set; } = new Dictionary<string, int>();
+        public Dictionary<string, string> Results { get; set; } = new Dictionary<string, string>();
 
         //private static List<StudentModel> _students = new List<StudentModel>();
 
