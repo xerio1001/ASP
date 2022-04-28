@@ -43,7 +43,15 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGVOZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [D:/Bureaublad/folders/school/ASP/OpdrachtSchoolVakken/Views/Student/Edit.cshtml]
+=======
+[C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/Student/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/Student/Edit.cshtml]
+>>>>>>> b649711f7a176661faf2921ab465497d961ebe11
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -51,8 +59,21 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxMaXN0U3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [D:/Bureaublad/folders/school/ASP/OpdrachtSchoolVakken/Views/Teacher/ListTeachers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxMaXN0VGVhY2hlcnMuY3NodG1s
+=======
+[C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/Teacher/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/Teacher/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/JUD/Documents/ASP/OpdrachtSchoolVakken/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
+>>>>>>> b649711f7a176661faf2921ab465497d961ebe11
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Bureaublad/folders/school/ASP/OpdrachtSchoolVakken/Views/_ViewImports.cshtml]

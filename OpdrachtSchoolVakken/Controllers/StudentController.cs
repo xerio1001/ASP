@@ -1,26 +1,44 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using OpdrachtSchoolVakken.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using OpdrachtSchoolVakken.Models;
 
 namespace OpdrachtSchoolVakken.Controllers
 {
     public class StudentController : Controller
     {
+        private readonly StudentService studentService;
+        private readonly CourseService courseService;
+
+        public StudentController(StudentService studentService, CourseService courseService)
+        {
+            this.studentService = studentService;
+            this.courseService = courseService;
+        }
+
         // GET: StudentController
         public ActionResult ListStudents()
         {
-            return View(StudentModel.GetAllStudents());
+            List<StudentModel> students = studentService.GetAllStudents();
+            return View(students);
         }
 
         // GET: StudentController/Details/5
         public ActionResult Details(string id)
-        {
-            return View();
+        { 
+            var student = studentService.GetOne(id);
+
+            return View(student);
         }
 
         // GET: StudentController/Create
         public ActionResult CreateNew()
         {
+            List<CourseModel> courses = courseService.GetAllCourses();
+            MultiSelectList courseList = new MultiSelectList(courses, "Id", "Name");
+            ViewBag.courses = courseList;
             return View();
         }
 
@@ -39,7 +57,7 @@ namespace OpdrachtSchoolVakken.Controllers
                 student.PhoneNumber = collection["Phonenumber"];
                 student.Courses = collection["Courses"].ToList();
 
-                StudentModel.AddStudent(student);
+                studentService.Create(student);
 
                 return RedirectToAction(nameof(ListStudents));
             }
@@ -52,8 +70,11 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: StudentController/Edit/5
         public ActionResult Edit(string id)
         {
+            List<CourseModel> courses = courseService.GetAllCourses();
+            MultiSelectList courseList = new MultiSelectList(courses, "Id", "Name");
 
-            return View(StudentModel.GetStudent(id));
+            ViewBag.courses = courseList;
+            return View(studentService.GetOne(id));
         }
 
         // POST: StudentController/Edit/5
@@ -63,16 +84,12 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
-                StudentModel student = new StudentModel();
-
-                student.Id = id;
-                student.Name = collection["Name"];
-                student.Age = int.Parse(collection["Age"]);
-                student.Gender = collection["Gender"];
-                student.PhoneNumber = collection["Phonenumber"];
-                student.Courses = collection["CourseID"].ToList();
-
-                StudentModel.EditStudent(student);
+                StudentModel newStudent = studentService.GetOne(id);
+                newStudent.Name = collection["Name"];
+                newStudent.Age = int.Parse(collection["Age"]);
+                newStudent.Gender = collection["Gender"];
+                newStudent.PhoneNumber = collection["PhoneNumber"];
+                newStudent.Courses = collection["Courses"].ToList();
 
                 return RedirectToAction(nameof(ListStudents));
             }
@@ -85,7 +102,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: StudentController/Delete/5
         public ActionResult Delete(string id)
         {   
-            StudentModel.DeleteStudent(id);
+            studentService.Remove(id);
             return RedirectToAction(nameof(ListStudents));
         }
 

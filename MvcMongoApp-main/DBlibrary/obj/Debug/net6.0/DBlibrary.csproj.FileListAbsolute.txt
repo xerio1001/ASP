@@ -1,0 +1,12 @@
+C:\Users\bertv\source\repos\DBlibrary\bin\Debug\net6.0\DBlibrary.deps.json
+C:\Users\bertv\source\repos\DBlibrary\bin\Debug\net6.0\DBlibrary.dll
+C:\Users\bertv\source\repos\DBlibrary\bin\Debug\net6.0\DBlibrary.pdb
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\DBlibrary.csproj.AssemblyReference.cache
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\DBlibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\DBlibrary.AssemblyInfoInputs.cache
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\DBlibrary.AssemblyInfo.cs
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\DBlibrary.csproj.CoreCompileInputs.cache
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\DBlibrary.dll
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\refint\DBlibrary.dll
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\DBlibrary.pdb
+C:\Users\bertv\source\repos\DBlibrary\obj\Debug\net6.0\ref\DBlibrary.dll

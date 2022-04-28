@@ -1,24 +1,93 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using OpdrachtSchoolVakken.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using OpdrachtSchoolVakken.Models;
 
 namespace OpdrachtSchoolVakken.Controllers
 {
     public class TeacherController : Controller
     {
-        public IActionResult Index()
+        private readonly TeacherService teacherService;
+
+        public TeacherController(TeacherService teacherService)
+        {
+            this.teacherService = teacherService;
+        }
+
+        // GET: TeacherController
+        public ActionResult Index()
+        {
+            return View(teacherService.GetAllTeachers());
+        }
+
+        // GET: TeacherController/Details/5
+        public ActionResult Details(string id)
         {
             return View();
         }
 
-        public IActionResult ListTeachers()
+        // GET: TeacherController/Create
+        public ActionResult Create()
         {
-            List<TeacherModel> teacher = new List<TeacherModel>();
+            return View();
+        }
 
-            teacher.Add(new TeacherModel { Id = 0, Name = "Bert", Age = 45, Gender = "Male", PhoneNumber = "1234567890", CourseID = 0 });
-            teacher.Add(new TeacherModel { Id = 0, Name = "Danny", Age = 40, Gender = "Male", PhoneNumber = "1564644446", CourseID = 1 });
-            teacher.Add(new TeacherModel { Id = 0, Name = "Jeff", Age = 45, Gender = "Male", PhoneNumber = "44498746584", CourseID = 2 });
+        // POST: TeacherController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
-            return View(teacher);
+        // GET: TeacherController/Edit/5
+        public ActionResult Edit(string id)
+        {
+            return View(teacherService.GetOne(id));
+        }
+
+        // POST: TeacherController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(string id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: TeacherController/Delete/5
+        public ActionResult Delete(string id)
+        {
+            teacherService.Remove(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        // POST: TeacherController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(string id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

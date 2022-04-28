@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using OpdrachtSchoolVakken.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OpdrachtSchoolVakken.Models;
 
@@ -6,10 +7,17 @@ namespace OpdrachtSchoolVakken.Controllers
 {
     public class CourseController : Controller
     {
+        private readonly CourseService courseService;
+
+        public CourseController(CourseService courseService)
+        {
+            this.courseService = courseService;
+        }
+
         // GET: CourseController
         public ActionResult Index()
         {
-            return View(CourseModel.GetAllCourses());
+            return View(courseService.GetAllCourses());
         }
 
         // GET: CourseController/Details/5
@@ -34,9 +42,8 @@ namespace OpdrachtSchoolVakken.Controllers
                 CourseModel course = new CourseModel();
 
                 course.Name = collection["Name"];
-                course.LessonID = collection["LessonID"];
 
-                CourseModel.AddCourse(course);
+                courseService.Create(course);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -49,7 +56,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: CourseController/Edit/5
         public ActionResult Edit(string id)
         {
-            return View(CourseModel.GetCourse(id));
+            return View(courseService.GetOne(id));
         }
 
         // POST: CourseController/Edit/5
@@ -59,13 +66,8 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
-                CourseModel course = new CourseModel();
-
-                course.Id = id;
-                course.Name = collection["Name"];
-                course.LessonID = collection["LessonID"];
-
-                CourseModel.EditCourse(course);
+                CourseModel newCourse = courseService.GetAllCourses().Where(course => course.Id == id).First();
+                newCourse.Name = collection["Name"];
 
                 return RedirectToAction(nameof(Index));
             }
@@ -78,7 +80,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: CourseController/Delete/5
         public ActionResult Delete(string id)
         {
-            CourseModel.DeleteCourse(id);
+            courseService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
 
