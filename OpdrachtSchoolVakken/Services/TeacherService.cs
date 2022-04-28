@@ -1,48 +1,48 @@
 ﻿using MongoDB.Driver;
 using OpdrachtSchoolVakken.Models;
 
-namespace DBlibrary.Services
+namespace OpdrachtSchoolVakken.Services
 {
     public class TeacherService
     {
-        private readonly IMongoCollection<TeacherModel> teachers;
+        private readonly IMongoCollection<TeacherModel> _teachers;
 
         public TeacherService()
         {
             MongoClient client = new MongoClient("mongodb+srv://m001-student:m001-mongodb-basics@sandbox.o2oak.mongodb.net/Sandbox?retryWrites=true&w=majority");
             IMongoDatabase database = client.GetDatabase("school-data");
-            teachers = database.GetCollection<TeacherModel>("students");
+            _teachers = database.GetCollection<TeacherModel>("teachers");
         }
 
-        public List<TeacherModel> Get()
+        public List<TeacherModel> GetAllTeachers()
         {
-            return teachers.Find(car => true).ToList();
+            return _teachers.Find(teacher => true).ToList();
         }
 
-        public TeacherModel Get(string id)
+        public TeacherModel GetOne(string id)
         {
-            return teachers.Find(car => car.Id == id).FirstOrDefault();
+            return _teachers.Find(teacher => teacher.Id == id).FirstOrDefault();
         }
 
         public TeacherModel Create(TeacherModel car)
         {
-            teachers.InsertOne(car);
+            _teachers.InsertOne(car);
             return car;
         }
 
-        public void Update(string id, TeacherModel carIn)
+        public void Update(string id, TeacherModel teacherIn)
         {
-            teachers.ReplaceOne(car => car.Id == id, carIn);
+            _teachers.ReplaceOne(teacher => teacher.Id == id, teacherIn);
         }
 
-        public void Remove(TeacherModel carIn)
+        public void Remove(TeacherModel teacherIn)
         {
-            teachers.DeleteOne(car => car.Id == carIn.Id);
+            _teachers.DeleteOne(teacher => teacher.Id == teacherIn.Id);
         }
 
         public void Remove(string id)
         {
-            teachers.DeleteOne(car => car.Id == id);
+            _teachers.DeleteOne(teacher => teacher.Id == id);
         }
     }
 }

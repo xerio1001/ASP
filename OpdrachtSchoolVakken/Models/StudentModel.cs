@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using OpdrachtSchoolVakken.Services;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.ComponentModel;
 
@@ -9,7 +10,7 @@ namespace OpdrachtSchoolVakken.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; }
 
         [DisplayName("Name")]
         [BsonElement("name")]
@@ -80,7 +81,7 @@ namespace OpdrachtSchoolVakken.Models
 
         //public void SaveStudent()
         //{
-            
+
         //}
 
         //public static void AddStudent(StudentModel student)
@@ -99,17 +100,5 @@ namespace OpdrachtSchoolVakken.Models
         //        }
         //    }
         //}
-
-//        public string StringCourseNames()
-//        {
-//            string courseNames = "";
-//            List<CourseModel> allCourses = CourseModel.GetAllCourses();
-
-//            var courses = allCourses.Where(c => Courses.Contains(c.Id)).Select(c => c.Name);
-
-//            courseNames = string.Join(",", courses);
-
-//            return courseNames;
-//        }
     }
 }

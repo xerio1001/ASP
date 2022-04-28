@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using OpdrachtSchoolVakken.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OpdrachtSchoolVakken.Models;
 
@@ -6,10 +7,17 @@ namespace OpdrachtSchoolVakken.Controllers
 {
     public class TeacherController : Controller
     {
+        private readonly TeacherService teacherService;
+
+        public TeacherController(TeacherService teacherService)
+        {
+            this.teacherService = teacherService;
+        }
+
         // GET: TeacherController
         public ActionResult Index()
         {
-            return View(TeacherModel.GetAllTeachers());
+            return View(teacherService.GetAllTeachers());
         }
 
         // GET: TeacherController/Details/5
@@ -42,7 +50,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: TeacherController/Edit/5
         public ActionResult Edit(string id)
         {
-            return View(TeacherModel.GetTeacher(id));
+            return View(teacherService.GetOne(id));
         }
 
         // POST: TeacherController/Edit/5
@@ -63,7 +71,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: TeacherController/Delete/5
         public ActionResult Delete(string id)
         {
-            TeacherModel.DeleteTeacher(id);
+            teacherService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
 

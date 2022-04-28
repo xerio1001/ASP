@@ -1,7 +1,7 @@
 ﻿using MongoDB.Driver;
 using OpdrachtSchoolVakken.Models;
 
-namespace DBlibrary.Services
+namespace OpdrachtSchoolVakken.Services
 {
     public class StudentService
     {
@@ -14,12 +14,12 @@ namespace DBlibrary.Services
             _students = database.GetCollection<StudentModel>("students");
         }
 
-        public List<StudentModel> Get()
+        public List<StudentModel> GetAllStudents()
         {
             return _students.Find(student => true).ToList();
         }
 
-        public StudentModel Get(string id)
+        public StudentModel GetOne(string id)
         {
             return _students.Find(student => student.Id == id).FirstOrDefault();
         }
