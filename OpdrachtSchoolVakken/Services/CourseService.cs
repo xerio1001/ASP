@@ -62,6 +62,14 @@ namespace OpdrachtSchoolVakken.Services
             }
         }
 
+        public List<CourseModel> GetMultiple(List<string> coursekeys)
+        {
+            var filter = Builders<CourseModel>.Filter.In(c => c.Id, coursekeys);
+            var result = _courses.Find(filter).ToList();
+
+            return result;
+        }
+
         // Display all course by name instead of the id.
         //public string StringCourseNames()
         //{
