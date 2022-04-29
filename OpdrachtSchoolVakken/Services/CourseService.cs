@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using OpdrachtSchoolVakken.Models;
 
 namespace OpdrachtSchoolVakken.Services
@@ -6,12 +7,14 @@ namespace OpdrachtSchoolVakken.Services
     public class CourseService
     {
         private readonly IMongoCollection<CourseModel> _courses;
+        private readonly IMongoCollection<StudentModel> _students;
 
         public CourseService()
         {
             MongoClient client = new MongoClient("mongodb+srv://m001-student:m001-mongodb-basics@sandbox.o2oak.mongodb.net/Sandbox?retryWrites=true&w=majority");
             IMongoDatabase database = client.GetDatabase("school-data");
             _courses = database.GetCollection<CourseModel>("courses");
+            _students = database.GetCollection<StudentModel>("students");
         }
 
         public List<CourseModel> GetAllCourses()
@@ -44,6 +47,21 @@ namespace OpdrachtSchoolVakken.Services
         {
             _courses.DeleteOne(course => course.Id == id);
         }
+
+        public List<StudentModel> GetstudentsByCourse(string id)
+        {
+            var result = _students.Find(s => s.Courses.Contains(id));
+
+            if (result != null)
+            {
+                return result.ToList();
+            }
+            else
+            {
+                return new List<StudentModel>();
+            }
+        }
+
 
         // Display all course by name instead of the id.
         //public string StringCourseNames()

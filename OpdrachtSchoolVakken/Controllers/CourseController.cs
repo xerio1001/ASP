@@ -10,11 +10,13 @@ namespace OpdrachtSchoolVakken.Controllers
     {
         private readonly CourseService courseService;
         private readonly TeacherService teacherService;
+        private readonly StudentService studentService;
 
-        public CourseController(CourseService courseService, TeacherService teacherService)
+        public CourseController(CourseService courseService, TeacherService teacherService, StudentService studentService)
         {
             this.courseService = courseService;
             this.teacherService = teacherService;
+            this.studentService = studentService;
         }
 
         // GET: CourseController
@@ -66,8 +68,10 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             List<TeacherModel> teachers = teacherService.GetAllTeachers();
             SelectList teacherList = new SelectList(teachers, "Id", "Name");
-
             ViewBag.teachers = teacherList;
+
+            List<StudentModel> students = courseService.GetstudentsByCourse(id);
+            ViewBag.students = students;
 
             return View(courseService.GetOne(id));
         }
