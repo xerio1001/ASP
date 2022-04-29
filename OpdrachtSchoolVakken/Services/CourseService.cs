@@ -62,7 +62,6 @@ namespace OpdrachtSchoolVakken.Services
             }
         }
 
-
         // Display all course by name instead of the id.
         //public string StringCourseNames()
         //{

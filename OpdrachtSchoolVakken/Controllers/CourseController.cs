@@ -89,6 +89,14 @@ namespace OpdrachtSchoolVakken.Controllers
 
                 courseService.Update(id, newCourse);
 
+                List<StudentModel> students = courseService.GetstudentsByCourse(id);
+
+                foreach(StudentModel student in students)
+                {
+                    student.Results[id] = collection[student.Id];
+                    studentService.Update(student.Id, student);
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             catch

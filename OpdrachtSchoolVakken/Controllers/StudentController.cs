@@ -56,6 +56,13 @@ namespace OpdrachtSchoolVakken.Controllers
                 student.PhoneNumber = collection["Phonenumber"];
                 student.Courses = collection["Courses"].ToList();
 
+                List<string> courseList = collection["Courses"].ToList();
+
+                foreach(string courseId in courseList)
+                {
+                    student.Results.Add(courseId, null);
+                }
+
                 studentService.Create(student);
 
                 return RedirectToAction(nameof(ListStudents));

@@ -8,7 +8,7 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-12">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -27,32 +27,30 @@
             @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, new{@class = "listbox"})
 
             <div class="row">
-                <div class="col-2">
+                <div class="col-4">
                     <label class="control-label">Students</label>
                 </div>
 
-                <div class="col-2">
+                <div class="col-4">
                     <label class="control-label">Results</label>
                 </div>
             </div>
 
             <hr />
 
-            <div class="row">
-                <div class="col-2">
-                    @foreach(var item in ViewBag.students)
-                    {
-                        @item.Name <br />
-                    }
+            @foreach(var item in ViewBag.students)
+            {
+                <div class="col-4">
+                    @item.Name 
                 </div>
-
-                <div class="col-2">
-                    @foreach(var item in ViewBag.students)
-                    {
-                        <input type="text" name="result" value="">
-                    }
+            }
+               
+            @foreach(var item in ViewBag.students)
+            {
+                <div class="col-4">
+                    <input type="text" name="@item.Id" value="@item.Results[Model.Id]">
                 </div>
-            </div>
+            }
             
 
             <div class="form-group">
