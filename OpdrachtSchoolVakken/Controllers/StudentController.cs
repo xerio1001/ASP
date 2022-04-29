@@ -21,8 +21,7 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: StudentController
         public ActionResult ListStudents()
         {
-            List<StudentModel> students = studentService.GetAllStudents();
-            return View(students);
+            return View(studentService.GetAllStudents());
         }
 
         // GET: StudentController/Details/5
@@ -90,6 +89,8 @@ namespace OpdrachtSchoolVakken.Controllers
                 newStudent.Gender = collection["Gender"];
                 newStudent.PhoneNumber = collection["PhoneNumber"];
                 newStudent.Courses = collection["Courses"].ToList();
+
+                studentService.Update(id, newStudent);
 
                 return RedirectToAction(nameof(ListStudents));
             }
