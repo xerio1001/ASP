@@ -11,22 +11,62 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  color: #000000;
 }
 
 body {
   margin-bottom: 60px;
   background-color: #dcdcdc;
+  color: #000000;
 }
 
-.m-10{
-    margin-top: 10%;
+/* Self created */
+
+#welcome-page-hr {
+    width: 50%;
+    border: dotted 1px rgba(0, 0, 0, 0.8);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 hr{
     width: 100%;
-    border: 2px dotted #000000;
+    border: 1px dotted #000000;
     border-radius: 10px;
     margin-top: 5%;
+}
+
+h1{
+    color: #000000;
+    text-decoration: underline;
+}
+
+a:link, #home-link a:link {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+a:visited, #home-link a:visited {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+a:active, #home-link a:active {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+a:hover, #home-link a:hover {
+    color: #0d60d9;
+    text-decoration: none;
+}
+
+.m-10 {
+    margin-top: 10%;
+}
+
+.padding-top-7-5p{
+    padding-top: 7.5%;
 }
 
 .animate {
@@ -34,20 +74,9 @@ hr{
 }
 
 @keyframes mymove {
-    0% { transform: rotate(0deg);}
-    25% { transform: rotate(90deg);}
-    50% { transform: rotate(180deg); }
-    75% { transform: rotate(270deg);}
-    100% { transform: rotate(360deg);}
-}
-
-.padding-top-7-5p{
-    padding-top: 7.5%;
-}
-
-#welcome-page-hr{
-    width: 50%;
-    border: dotted 1px rgba(0, 0, 0, 0.8);
-    margin-left: auto;
-    margin-right: auto;
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
 }

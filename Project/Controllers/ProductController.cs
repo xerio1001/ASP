@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Project.Models;
 using Project.Services;
 
@@ -9,10 +10,12 @@ namespace Project.Controllers
     {
 
         private readonly ProductService productService;
+        private readonly SupplierService supplierService;
 
-        public ProductController(ProductService productService)
+        public ProductController(ProductService productService, SupplierService supplierService)
         {
             this.productService = productService;
+            this.supplierService = supplierService;
         }
 
         // GET: ProductController
@@ -24,12 +27,19 @@ namespace Project.Controllers
         // GET: ProductController/Details/5
         public ActionResult Details(string id)
         {
+            List<string> supplierNames = productService.GetSupplierByName(id);
+            ViewBag.displaySupplierName = supplierNames;
+
             return View(productService.GetOne(id));
         }
 
         // GET: ProductController/Create
         public ActionResult Create()
         {
+            List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
+            MultiSelectList supplierList = new MultiSelectList(suppliers, "Id", "Supplier");
+            ViewBag.suppliers = supplierList;
+
             return View();
         }
 
@@ -62,6 +72,10 @@ namespace Project.Controllers
         // GET: ProductController/Edit/5
         public ActionResult Edit(string id)
         {
+            List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
+            MultiSelectList supplierList = new MultiSelectList(suppliers, "Id", "Supplier");
+            ViewBag.suppliers = supplierList;
+
             return View(productService.GetOne(id));
         }
 

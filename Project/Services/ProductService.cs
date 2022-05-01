@@ -6,12 +6,14 @@ namespace Project.Services
     public class ProductService
     {
         private readonly IMongoCollection<ProductModel> _products;
+        private readonly IMongoCollection<SupplierModel> _suppliers;
 
         public ProductService()
         {
             MongoClient client = new MongoClient("mongodb+srv://m001-student:m001-mongodb-basics@sandbox.o2oak.mongodb.net/Sandbox?retryWrites=true&w=majority");
             IMongoDatabase database = client.GetDatabase("Project");
             _products = database.GetCollection<ProductModel>("stock");
+            _suppliers = database.GetCollection<SupplierModel>("supplier");
         }
 
         public List<ProductModel> GetAllProducts()
@@ -43,6 +45,17 @@ namespace Project.Services
         public void Remove(string id)
         {
             _products.DeleteOne(product => product.Id == id);
+        }
+
+        public List<string> GetSupplierByName(string id)
+        {
+            List<string> listSuppliers = new();
+            List<SupplierModel> suppliers = _suppliers.Find(supplier => true).ToList();
+            ProductModel product = _products.Find(product => product.Id == id).FirstOrDefault();
+
+            listSuppliers = suppliers.Where(c => product.SupplierId.Contains(c.Id)).Select(c => c.Supplier).ToList();
+
+            return listSuppliers;
         }
     }
 }
