@@ -39,6 +39,14 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
+                TeacherModel teacher = new TeacherModel();
+
+                teacher.Name = collection["Name"];
+                teacher.Age = int.Parse(collection["Age"]);
+                teacher.Gender = collection["Gender"];
+
+                teacherService.Create(teacher);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
