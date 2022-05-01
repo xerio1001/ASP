@@ -18,9 +18,9 @@ namespace Project.Models
         [BsonElement("brand")]
         public string Brand { get; set; }
 
-        [DisplayName("Prijs/€")]
+        [DisplayName("Prijs")]
         [BsonElement("price")]
-        public decimal Price { get; set; }
+        public string Price { get; set; }
 
         [DisplayName("In Stock")]
         [BsonElement("amountInStock")]

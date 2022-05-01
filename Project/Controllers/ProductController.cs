@@ -44,10 +44,10 @@ namespace Project.Controllers
 
                 newProduct.Name = collection["Name"];
                 newProduct.Brand = collection["Brand"];
-                newProduct.Price = Decimal.Parse(collection["Price"]);
+                newProduct.Price = collection["Price"];
                 newProduct.AmountInStock = collection["AmountInStock"];
                 newProduct.AmountPerOrder = collection["AmountPerOrder"];
-                newProduct.SupplierId = collection["Supplier"];
+                newProduct.SupplierId = collection["SupplierId"];
 
                 productService.Create(newProduct);
 
@@ -72,6 +72,17 @@ namespace Project.Controllers
         {
             try
             {
+                ProductModel newProduct = productService.GetOne(id);
+
+                newProduct.Name = collection["Name"];
+                newProduct.Brand = collection["Brand"];
+                newProduct.Price = collection["Price"];
+                newProduct.AmountInStock = collection["AmountInStock"];
+                newProduct.AmountPerOrder = collection["AmountPerOrder"];
+                newProduct.SupplierId = collection["SupplierId"];
+
+                productService.Update(id, newProduct);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
