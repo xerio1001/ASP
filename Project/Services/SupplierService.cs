@@ -14,7 +14,7 @@ namespace Project.Services
             _suppliers = database.GetCollection<SupplierModel>("supplier");
         }
 
-        public List<SupplierModel> GetAllProducts()
+        public List<SupplierModel> GetAllSuppliers()
         {
             return _suppliers.Find(supplier => true).ToList();
         }
