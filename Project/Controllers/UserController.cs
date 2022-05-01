@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Project.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 
 namespace Project.Controllers
@@ -23,14 +25,14 @@ namespace Project.Controllers
             return View();
         }
 
-        public IActionResult processLogin(string email, string password)
+        public IActionResult processLogin()
         {
-            return Content($"Hello: email { email } password { password }");
+            return View();
         }
 
-        public IActionResult processRegister(string email, string password)
+        public IActionResult processRegister()
         {
-            return Content($"Hello: email { email } password { password }");
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

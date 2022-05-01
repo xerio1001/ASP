@@ -46,10 +46,7 @@ namespace OpdrachtSchoolVakken.Controllers
                 teacher.Gender = collection["Gender"];
 
                 teacherService.Create(teacher);
-<<<<<<< HEAD
 
-=======
->>>>>>> b1b65e5790b8d0855d5355828e66856a91eceedf
                 return RedirectToAction(nameof(Index));
             }
             catch
