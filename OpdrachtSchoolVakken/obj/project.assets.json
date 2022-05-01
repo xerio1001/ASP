@@ -9153,23 +9153,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JUD\\.nuget\\packages\\": {},
+    "C:\\Users\\dario\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JUD\\Documents\\ASP\\OpdrachtSchoolVakken\\OpdrachtSchoolVakken.csproj",
+      "projectUniqueName": "D:\\Bureaublad\\folders\\school\\ASP\\OpdrachtSchoolVakken\\OpdrachtSchoolVakken.csproj",
       "projectName": "OpdrachtSchoolVakken",
-      "projectPath": "C:\\Users\\JUD\\Documents\\ASP\\OpdrachtSchoolVakken\\OpdrachtSchoolVakken.csproj",
-      "packagesPath": "C:\\Users\\JUD\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JUD\\Documents\\ASP\\OpdrachtSchoolVakken\\obj\\",
+      "projectPath": "D:\\Bureaublad\\folders\\school\\ASP\\OpdrachtSchoolVakken\\OpdrachtSchoolVakken.csproj",
+      "packagesPath": "C:\\Users\\dario\\.nuget\\packages\\",
+      "outputPath": "D:\\Bureaublad\\folders\\school\\ASP\\OpdrachtSchoolVakken\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\JUD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9227,7 +9227,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -9236,11 +9236,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-<<<<<<< HEAD
       "message": "Problem reading the cache file D:\\Bureaublad\\folders\\school\\ASP\\OpdrachtSchoolVakken\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Problem reading the cache file C:\\Users\\JUD\\Documents\\ASP\\OpdrachtSchoolVakken\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> b1b65e5790b8d0855d5355828e66856a91eceedf
     }
   ]
 }
