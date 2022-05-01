@@ -8,19 +8,49 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-12">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group" style="display: none;">
                 <label asp-for="Id" class="control-label"></label>
                 <input asp-for="Id" class="form-control" />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
+            @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, new{@class = "listbox"})
+
+            <div class="row">
+                <div class="col-4 text-end">
+                    <label class="control-label">Students</label>
+                </div>
+
+                <div class="col-4 text-start">
+                    <label class="control-label">Results</label>
+                </div>
+            </div>
+
+            <hr />
+
+            @foreach(var item in ViewBag.students)
+            {
+                <div class="row mt-2">
+                    <div class="col-4 text-end">
+                        @item.Name 
+                    </div>
+
+                    <div class="col-4 text-start">
+                        <input type="text" name="@item.Id" value="@item.Results[Model.Id]">
+                    </div>
+                </div>
+            }
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

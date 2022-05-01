@@ -46,7 +46,10 @@ namespace OpdrachtSchoolVakken.Controllers
                 teacher.Gender = collection["Gender"];
 
                 teacherService.Create(teacher);
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1b65e5790b8d0855d5355828e66856a91eceedf
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -68,6 +71,13 @@ namespace OpdrachtSchoolVakken.Controllers
         {
             try
             {
+                TeacherModel newTeacher = teacherService.GetOne(id);
+                newTeacher.Name = collection["Name"];
+                newTeacher.Age = int.Parse(collection["Age"]);
+                newTeacher.Gender = collection["Gender"];
+
+                teacherService.Update(id, newTeacher);
+
                 return RedirectToAction(nameof(Index));
             }
             catch

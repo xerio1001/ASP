@@ -43,13 +43,19 @@
             @Html.DisplayNameFor(model => model.Courses)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Courses)
+            @foreach(var item in ViewBag.displayCourseNames)
+            {
+                @item <br />
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Results)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Results)
+            @foreach(var item in ViewBag.displayResultNames)
+            {
+                <span style="word-spacing: 10px;">@item.Name @Model.Results[item.Id]</span> <br />
+            }
         </dd>
     </dl>
 </div>
