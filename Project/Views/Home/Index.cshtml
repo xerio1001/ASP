@@ -13,21 +13,21 @@
 
     <div class="row mt-5">
         <div class="col-6 text-end"> 
-            <a class="text-dark" asp-controller="Stock" asp-action="overzichtStock">
-                <img src="~/img/eye.png" style="width: 40%; height: auto;" /> 
+            <a class="text-dark" asp-controller="Product" asp-action="Index">
+                <img src="~/img/tandwiel.png" style="width: 40%; height: auto;" class="animate"/> 
             </a>
         </div>
         <div class="col-6 text-start padding-top-7-5p">
-            <h1>Overzicht stock</h1>
+            <a class="text-dark" asp-controller="Supplier" asp-action="Index"><h1>stock</h1></a>
         </div>
     </div>
 
     <div class="row mt-5">
-        <div class="col-6 text-end padding-top-7-5p"> 
-            <h1>Overzicht leveranciers</h1> 
+        <div class="col-6 text-end padding-top-7-5p">
+            <a class="text-dark" asp-controller="Supplier" asp-action="Index"><h1>Leveranciers</h1></a>
         </div>
-        <div class="col-6 text-start">
-            <a class="text-dark" asp-controller="Stock" asp-action="overzichtLeveranciers">
+        <div class="col-6 text-start"> 
+            <a class="text-dark" asp-controller="Supplier" asp-action="Index">
                 <img src="~/img/supplier.png" style="width: 40%; height: auto;" /> 
             </a>
         </div>
@@ -35,43 +35,21 @@
 
     <div class="row mt-5">
         <div class="col-6 text-end"> 
-            <a class="text-dark" asp-controller="Stock" asp-action="pasStockAan">
-                <img src="~/img/tandwiel.png" style="width: 40%; height: auto;" class="animate"/> 
-            </a>
-        </div>
-        <div class="col-6 text-start padding-top-7-5p">
-            <h1>Pas stock aan</h1>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-6 text-end padding-top-7-5p">
-            <h1>Bestel</h1>
-        </div>
-        <div class="col-6 text-start"> 
-            <a class="text-dark" asp-controller="Stock" asp-action="bestel">
-                <img src="~/img/order.png" style="width: 40%; height: auto;" /> 
-            </a>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-6 text-end"> 
-            <a class="text-dark" asp-controller="Stock" asp-action="voegProductToe">
+            <a class="text-dark" asp-controller="Product" asp-action="Create">
                 <img src="~/img/addProduct.png" style="width: 40%; height: auto;" /> 
             </a>
         </div>
          <div class="col-6 text-start padding-top-7-5p">
-            <h1>Product toevoegen</h1>
+            <a class="text-dark" asp-controller="Supplier" asp-action="Index"><h1>Product toevoegen</h1></a>
         </div>
     </div>
 
     <div class="row mt-5">
         <div class="col-6 text-end padding-top-7-5p">
-            <h1>Leverancier toevoegen</h1>
+            <a class="text-dark" asp-controller="Supplier" asp-action="Index"><h1>Leverancier toevoegen</h1></a>
         </div>
         <div class="col-6 text-start"> 
-            <a class="text-dark" asp-controller="Stock" asp-action="voegLeverancierToe">
+            <a class="text-dark" asp-controller="Supplier" asp-action="Create">
                 <img src="~/img/addSupplier.png" style="width: 40%; height: auto;" /> 
             </a>
         </div>
