@@ -20,7 +20,10 @@
             @Html.DisplayNameFor(model => model.Teacher)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Teacher)
+            @foreach(var item in ViewBag.teacherName)
+            {
+                @item
+            }
         </dd>
     </dl>
 </div>
