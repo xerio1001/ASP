@@ -24,7 +24,7 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
-            @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, "Please select", new{@class = "listbox"})
+            @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, "Please select")
 
             @foreach(var item in ViewBag.students)
             {
