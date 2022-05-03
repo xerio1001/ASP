@@ -7,7 +7,6 @@
 <h1>Details</h1>
 
 <div>
-    <h4>CourseModel</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -25,6 +24,52 @@
                 @item
             }
         </dd>
+        @foreach(var item in ViewBag.students)
+            {
+                if(item != null)
+                {
+                    <div class="row mt-3">
+                        <div class="col-2">
+                            <strong><label class="control-label">Students</label></strong>
+                        </div>
+
+                        <div class="col-2">
+                            <strong><label class="control-label">Results</label></strong>
+                        </div>
+                    </div>
+
+                    <hr />
+                    break;
+                }
+            }
+
+            @foreach(var item in ViewBag.students)
+            {
+                if(item.Results[Model.Id] != null && item.Results[Model.Id] != "")
+                {
+                    <div class="row mt-2">
+                        <div class="col-2">
+                            @item.Name 
+                        </div>
+
+                        <div class="col-2">
+                            <span>@item.Results[Model.Id] /100</span>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row mt-2">
+                        <div class="col-2">
+                            @item.Name 
+                        </div>
+
+                        <div class="col-2">
+                            <span style="color: red;">Niet bekend</span>
+                        </div>
+                    </div>
+                }
+            }
     </dl>
 </div>
 <div>
