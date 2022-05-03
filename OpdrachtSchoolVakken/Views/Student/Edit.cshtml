@@ -43,7 +43,7 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             
-            @Html.ListBoxFor(model => model.Courses, (MultiSelectList)ViewBag.courses, new{multiple = "multiple", @class = "listbox"})
+            @Html.ListBoxFor(model => model.Courses, (MultiSelectList)ViewBag.courses, new{multiple = "multiple"})
 
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

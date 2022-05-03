@@ -60,7 +60,6 @@ namespace OpdrachtSchoolVakken.Services
 
         public List<string> GetResultsForStudent(string id)
         {
-            //List<string> listCourses = new List<string>();
             List<CourseModel> allCourses = _courses.Find(course => true).ToList();
             StudentModel student = _students.Find(student => student.Id == id).FirstOrDefault();
 
@@ -68,5 +67,25 @@ namespace OpdrachtSchoolVakken.Services
 
             return listKeys;
         }
+
+        public void UpdateResults(StudentModel newStudent)
+        {
+            foreach (var result in newStudent.Results)
+            {
+                if (!newStudent.Courses.Contains(result.Key))
+                {
+                    newStudent.Results.Remove(result.Key);
+                }
+            }
+
+            foreach (string courseId in newStudent.Courses)
+            {
+                if (!newStudent.Results.ContainsKey(courseId))
+                {
+                    newStudent.Results.Add(courseId, null);
+                }
+            }
+        }
+
     }
 }

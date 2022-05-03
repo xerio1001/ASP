@@ -107,6 +107,8 @@ namespace OpdrachtSchoolVakken.Controllers
                 newStudent.PhoneNumber = collection["PhoneNumber"];
                 newStudent.Courses = collection["Courses"].ToList();
 
+                studentService.UpdateResults(newStudent);
+
                 studentService.Update(id, newStudent);
 
                 return RedirectToAction(nameof(ListStudents));
