@@ -13,7 +13,7 @@
 <table class="table table-stripped table-hover">
     @foreach(var item in ViewBag.displaySuppliersName)
     {
-        @
+        
     }
 </table>
 
@@ -36,7 +36,7 @@
                 @Html.DisplayNameFor(model => model.AmountInStock)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AmountPerOrder)
+                @Html.DisplayNameFor(model => model.Barcode)
             </th>
 @*            <th>
                 @Html.DisplayNameFor(model => model.SupplierId)
@@ -63,7 +63,7 @@
                 @Html.DisplayFor(modelItem => item.AmountInStock)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AmountPerOrder)
+                @Html.DisplayFor(modelItem => item.Barcode)
             </td>
 @*            <td>
                 @Html.DisplayFor(modelItem => item.SupplierId)

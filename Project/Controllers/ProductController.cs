@@ -61,10 +61,10 @@ namespace Project.Controllers
 
                 newProduct.Name = collection["Name"];
                 newProduct.Brand = collection["Brand"];
-                newProduct.Price = collection["Price"];
-                newProduct.AmountInStock = collection["AmountInStock"];
-                newProduct.AmountPerOrder = collection["AmountPerOrder"];
+                newProduct.Price = decimal.Parse(collection["Price"]);
+                newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
+                newProduct.Barcode = collection["Barcode"];
 
                 productService.Create(newProduct);
 
@@ -97,10 +97,10 @@ namespace Project.Controllers
 
                 newProduct.Name = collection["Name"];
                 newProduct.Brand = collection["Brand"];
-                newProduct.Price = collection["Price"];
-                newProduct.AmountInStock = collection["AmountInStock"];
-                newProduct.AmountPerOrder = collection["AmountPerOrder"];
+                newProduct.Price = decimal.Parse(collection["Price"]);
+                newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
+                newProduct.Barcode = collection["Barcode"];
 
                 productService.Update(id, newProduct);
 
