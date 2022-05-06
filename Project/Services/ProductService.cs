@@ -18,7 +18,7 @@ namespace Project.Services
 
         public List<ProductModel> GetAllProducts()
         {
-            return _products.Find(product => true).ToList();
+            return _products.Find(products => true).ToList();
         }
 
         public ProductModel GetOne(string id)

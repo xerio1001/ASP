@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Project.Models;
 using Project.Services;
@@ -8,7 +7,6 @@ namespace Project.Controllers
 {
     public class ProductController : Controller
     {
-
         private readonly ProductService productService;
         private readonly SupplierService supplierService;
 
@@ -23,12 +21,33 @@ namespace Project.Controllers
         {
             List<string> valueSuppliers = new List<string>();
             List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
-            foreach(SupplierModel supplier in suppliers)
+
+            foreach (SupplierModel supplier in suppliers)
             {
                 valueSuppliers.Add(supplier.Supplier);
             }
-            ViewBag.displaySuppliersName = valueSuppliers.ToList();
+
+            ViewBag.displaySuppliersName = valueSuppliers;
+
+
             return View(productService.GetAllProducts());
+        }
+
+        // POST: ProductController/Index
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(IFormCollection collection)
+        {
+            try
+            {
+                string newcheck = collection["Bekijk al mijn producten"];
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: ProductController/Details/5
@@ -61,7 +80,6 @@ namespace Project.Controllers
 
                 newProduct.Name = collection["Name"];
                 newProduct.Brand = collection["Brand"];
-                newProduct.Price = decimal.Parse(collection["Price"]);
                 newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
                 newProduct.Barcode = collection["Barcode"];
@@ -97,7 +115,6 @@ namespace Project.Controllers
 
                 newProduct.Name = collection["Name"];
                 newProduct.Brand = collection["Brand"];
-                newProduct.Price = decimal.Parse(collection["Price"]);
                 newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
                 newProduct.Barcode = collection["Barcode"];
