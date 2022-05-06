@@ -21,6 +21,13 @@ namespace Project.Controllers
         // GET: ProductController
         public ActionResult Index()
         {
+            List<string> valueSuppliers = new List<string>();
+            List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
+            foreach(SupplierModel supplier in suppliers)
+            {
+                valueSuppliers.Add(supplier.Supplier);
+            }
+            ViewBag.displaySuppliersName = valueSuppliers.ToList();
             return View(productService.GetAllProducts());
         }
 

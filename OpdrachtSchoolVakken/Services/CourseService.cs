@@ -7,6 +7,7 @@ namespace OpdrachtSchoolVakken.Services
     public class CourseService
     {
         private readonly IMongoCollection<CourseModel> _courses;
+        private readonly IMongoCollection<TeacherModel> _teachers;
         private readonly IMongoCollection<StudentModel> _students;
 
         public CourseService()
@@ -14,6 +15,7 @@ namespace OpdrachtSchoolVakken.Services
             MongoClient client = new MongoClient("mongodb+srv://m001-student:m001-mongodb-basics@sandbox.o2oak.mongodb.net/Sandbox?retryWrites=true&w=majority");
             IMongoDatabase database = client.GetDatabase("school-data");
             _courses = database.GetCollection<CourseModel>("courses");
+            _teachers = database.GetCollection<TeacherModel>("teachers");
             _students = database.GetCollection<StudentModel>("students");
         }
 
@@ -70,17 +72,15 @@ namespace OpdrachtSchoolVakken.Services
             return result;
         }
 
-        // Display all course by name instead of the id.
-        //public string StringCourseNames()
-        //{
-        //    string courseNames = "";
-        //    List<CourseModel> allCourses = courseService.GetAllCourses();
+        public List<string> GetTeachersForCourse(string id)
+        {
+            List<string> listTeachers = new List<string>();
+            List<TeacherModel> allTeachers = _teachers.Find(teacher => true).ToList();
+            CourseModel course = _courses.Find(course => course.Id == id).FirstOrDefault();
 
-        //    var courses = allCourses.Where(c => Courses.Contains(c.Id)).Select(c => c.Name);
+            listTeachers = allTeachers.Where(c => course.Teacher.Contains(c.Id)).Select(c => c.Name).ToList();
 
-        //    courseNames = string.Join(",", courses);
-
-        //    return courseNames;
-        //}
+            return listTeachers;
+        }
     }
 }

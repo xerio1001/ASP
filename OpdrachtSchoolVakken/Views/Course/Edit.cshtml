@@ -8,7 +8,7 @@
 
 <hr />
 <div class="row">
-    <div class="col-12">
+    <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -24,34 +24,44 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
-            @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, new{@class = "listbox"})
-
-            <div class="row">
-                <div class="col-4 text-end">
-                    <label class="control-label">Students</label>
-                </div>
-
-                <div class="col-4 text-start">
-                    <label class="control-label">Results</label>
-                </div>
-            </div>
-
-            <hr />
+            @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, "Please select")
 
             @foreach(var item in ViewBag.students)
             {
-                <div class="row mt-2">
-                    <div class="col-4 text-end">
-                        @item.Name 
+                if(item != null)
+                {
+                    <div class="row">
+                        <div class="col-4">
+                            <strong><label class="control-label">Students</label></strong>
+                        </div>
+
+                        <div class="col-4">
+                            <strong><label class="control-label">Results</label></strong>
+                        </div>
                     </div>
 
-                    <div class="col-4 text-start">
-                        <input type="text" name="@item.Id" value="@item.Results[Model.Id]">
-                    </div>
-                </div>
+                    <hr />
+                    break;
+                }
             }
 
-            <div class="form-group">
+            @foreach(var item in ViewBag.students)
+            {
+                if (item != null)
+                {
+                    <div class="row mt-2">
+                        <div class="col-4">
+                            @item.Name 
+                        </div>
+
+                        <div class="col-4">
+                            <input type="text" name="@item.Id" value="@item.Results[Model.Id]" style="width: 30%;" max="100"> <span>/100</span>
+                        </div>
+                    </div>
+                }
+            }
+
+            <div class="form-group mt-3">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

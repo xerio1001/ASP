@@ -5,6 +5,11 @@
       "ProjectGuid": "8e91ddc3-d861-4861-8023-7364a696542d",
       "DisplayName": "OpdrachtSchoolVakken",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

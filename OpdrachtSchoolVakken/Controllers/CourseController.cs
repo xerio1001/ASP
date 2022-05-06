@@ -28,6 +28,12 @@ namespace OpdrachtSchoolVakken.Controllers
         // GET: CourseController/Details/5
         public ActionResult Details(string id)
         {
+            List<string> teacherName = courseService.GetTeachersForCourse(id);
+            ViewBag.teacherName = teacherName;
+
+            List<StudentModel> students = courseService.GetstudentsByCourse(id);
+            ViewBag.students = students;
+
             return View(courseService.GetOne(id));
         }
 

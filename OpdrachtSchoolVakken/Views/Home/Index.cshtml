@@ -2,8 +2,30 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="row">
-    <div class="col text-center">
-        <h1>Welkom</h1>
+<div class="row" style="margin-top: 15%;">
+    <div class="col-4 text-center jumpOnHover" id="ignoreBorder">
+        <a asp-controller="Student" asp-action="ListStudents" class="ignoreBorder"> <img src="~/img/angel.png" /> </a>
+    </div>
+
+    <div class="col-4 text-center jumpOnHover">
+         <a asp-controller="Teacher" asp-action="Index" class="ignoreBorder"> <img src="~/img/devil.png" /> </a>
+    </div>
+
+    <div class="col-4 text-center jumpOnHover" id="ignoreBorder">
+         <a asp-controller="Course" asp-action="Index" class="ignoreBorder"> <img src="~/img/book.png" /> </a>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-4 text-center" id="ignoreBorder">
+        <a asp-controller="Student" asp-action="CreateNew" class="ignoreBorder"> <img src="~/img/plus.png" class="comeUpOnHover"/> </a>
+    </div>
+
+    <div class="col-4 text-center">
+         <a asp-controller="Teacher" asp-action="Create" class="ignoreBorder"> <img src="~/img/plus.png" class="comeUpOnHover"/> </a>
+    </div>
+
+    <div class="col-4 text-center" id="ignoreBorder">
+         <a asp-controller="Course" asp-action="Create" class="ignoreBorder"> <img src="~/img/plus.png" class="comeUpOnHover"/> </a>
     </div>
 </div>

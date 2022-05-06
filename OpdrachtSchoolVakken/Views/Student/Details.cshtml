@@ -39,7 +39,7 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Courses)
         </dt>
         <dd class = "col-sm-10">
@@ -47,14 +47,29 @@
             {
                 @item <br />
             }
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Results)
         </dt>
         <dd class = "col-sm-10">
             @foreach(var item in ViewBag.displayResultNames)
             {
-                <span style="word-spacing: 10px;">@item.Name @Model.Results[item.Id]</span> <br />
+                <div class="row">
+                    <div class="col-2">
+                        @item.Name
+                    </div>
+                    |
+                    <div class="col-2">
+                        @if(@Model.Results[item.Id] == null || @Model.Results[item.Id] == "")
+                        {
+                            <span style="color: red;">Geen punten bekend</span>
+                        }
+                        else
+                        {
+                            @Model.Results[item.Id] <span>/100</span>
+                        }
+                    </div>
+                </div>
             }
         </dd>
     </dl>

@@ -22,7 +22,7 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
-             @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, new{@class = "listbox"})
+             @Html.DropDownListFor(model => model.Teacher, (SelectList)ViewBag.teachers, "Please select", new{@class = "listbox"})
 
             <div class="form-group">
                 <input type="reset" value="Reset" class="btn btn-primary" />

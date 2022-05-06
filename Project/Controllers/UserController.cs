@@ -25,16 +25,6 @@ namespace Project.Controllers
             return View();
         }
 
-        public IActionResult processLogin()
-        {
-            return View();
-        }
-
-        public IActionResult processRegister()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
