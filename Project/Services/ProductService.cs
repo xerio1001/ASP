@@ -47,6 +47,11 @@ namespace Project.Services
             _products.DeleteOne(product => product.Id == id);
         }
 
+        public List<ProductModel> GetProductBySupplier(string id)
+        {
+            return _products.Find(products => products.SupplierId == id).ToList();
+        }
+
         public List<string> GetSupplierByName(string id)
         {
             List<string> listSuppliers = new();

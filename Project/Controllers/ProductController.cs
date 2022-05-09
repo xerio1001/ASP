@@ -17,37 +17,27 @@ namespace Project.Controllers
         }
 
         // GET: ProductController
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            List<string> valueSuppliers = new List<string>();
+            List<SupplierModel> supplierModel = new List<SupplierModel>();
             List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
 
             foreach (SupplierModel supplier in suppliers)
             {
-                valueSuppliers.Add(supplier.Supplier);
+                supplierModel.Add(supplier);
             }
 
-            ViewBag.displaySuppliersName = valueSuppliers;
+            ViewBag.displaySuppliers = supplierModel;
 
-
-            return View(productService.GetAllProducts());
-        }
-
-        // POST: ProductController/Index
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(IFormCollection collection)
-        {
-            try
+            if(id == "" || id == null)
             {
-                string newcheck = collection["Bekijk al mijn producten"];
-
-                return RedirectToAction(nameof(Index));
+                return View(productService.GetAllProducts());
             }
-            catch
+            else
             {
-                return View();
+                return View(productService.GetProductBySupplier(id));
             }
+            
         }
 
         // GET: ProductController/Details/5
