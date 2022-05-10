@@ -41,6 +41,10 @@ h1{
     text-decoration: underline;
 }
 
+.h1-nodec h1, .h1-nodec a:hover{
+    text-decoration: none;
+}
+
 a:link, #home-link a:link {
     color: #57617e;
     text-decoration: none;
