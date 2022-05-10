@@ -42,23 +42,24 @@ h1{
 }
 
 a:link, #home-link a:link {
-    color: #0d6efd;
+    color: #57617e;
     text-decoration: none;
 }
 
 a:visited, #home-link a:visited {
-    color: #0d6efd;
+    color: #57617e;
     text-decoration: none;
 }
 
 a:active, #home-link a:active {
-    color: #0d6efd;
+    color: #57617e;
     text-decoration: none;
 }
 
 a:hover, #home-link a:hover {
-    color: #0d60d9;
-    text-decoration: none;
+    color: #7a88b4;
+    cursor: grab;
+    text-decoration: underline;
 }
 
 .m-10 {
@@ -67,6 +68,12 @@ a:hover, #home-link a:hover {
 
 .padding-top-7-5p{
     padding-top: 7.5%;
+}
+
+.hr-select-products {
+    width: 30%;
+    margin-left: 15%; 
+    margin-right: auto;
 }
 
 .animate {
