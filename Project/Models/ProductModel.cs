@@ -18,20 +18,16 @@ namespace Project.Models
         [BsonElement("brand")]
         public string Brand { get; set; }
 
-        [DisplayName("Prijs")]
-        [BsonElement("price")]
-        public string Price { get; set; }
-
         [DisplayName("In Stock")]
         [BsonElement("amountInStock")]
-        public string AmountInStock { get; set; }
-
-        [DisplayName("Per Order")]
-        [BsonElement("amountPerOrder")]
-        public string AmountPerOrder { get; set; }
+        public int AmountInStock { get; set; }
 
         [DisplayName("Leverancier")]
         [BsonElement("supplier")]
         public string SupplierId { get; set; }
+
+        [DisplayName("Barcode")]
+        [BsonElement("barcode")]
+        public string Barcode { get; set; }
     }
 }

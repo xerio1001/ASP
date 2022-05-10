@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Project.Models;
 using Project.Services;
@@ -8,7 +7,6 @@ namespace Project.Controllers
 {
     public class ProductController : Controller
     {
-
         private readonly ProductService productService;
         private readonly SupplierService supplierService;
 
@@ -19,16 +17,27 @@ namespace Project.Controllers
         }
 
         // GET: ProductController
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            List<string> valueSuppliers = new List<string>();
+            List<SupplierModel> supplierModel = new List<SupplierModel>();
             List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
-            foreach(SupplierModel supplier in suppliers)
+
+            foreach (SupplierModel supplier in suppliers)
             {
-                valueSuppliers.Add(supplier.Supplier);
+                supplierModel.Add(supplier);
             }
-            ViewBag.displaySuppliersName = valueSuppliers.ToList();
-            return View(productService.GetAllProducts());
+
+            ViewBag.displaySuppliers = supplierModel;
+
+            if(id == "" || id == null)
+            {
+                return View(productService.GetAllProducts());
+            }
+            else
+            {
+                return View(productService.GetProductBySupplier(id));
+            }
+            
         }
 
         // GET: ProductController/Details/5
@@ -61,10 +70,9 @@ namespace Project.Controllers
 
                 newProduct.Name = collection["Name"];
                 newProduct.Brand = collection["Brand"];
-                newProduct.Price = collection["Price"];
-                newProduct.AmountInStock = collection["AmountInStock"];
-                newProduct.AmountPerOrder = collection["AmountPerOrder"];
+                newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
+                newProduct.Barcode = collection["Barcode"];
 
                 productService.Create(newProduct);
 
@@ -97,10 +105,9 @@ namespace Project.Controllers
 
                 newProduct.Name = collection["Name"];
                 newProduct.Brand = collection["Brand"];
-                newProduct.Price = collection["Price"];
-                newProduct.AmountInStock = collection["AmountInStock"];
-                newProduct.AmountPerOrder = collection["AmountPerOrder"];
+                newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
+                newProduct.Barcode = collection["Barcode"];
 
                 productService.Update(id, newProduct);
 

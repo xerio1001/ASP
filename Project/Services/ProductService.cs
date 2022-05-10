@@ -18,7 +18,7 @@ namespace Project.Services
 
         public List<ProductModel> GetAllProducts()
         {
-            return _products.Find(product => true).ToList();
+            return _products.Find(products => true).ToList();
         }
 
         public ProductModel GetOne(string id)
@@ -45,6 +45,11 @@ namespace Project.Services
         public void Remove(string id)
         {
             _products.DeleteOne(product => product.Id == id);
+        }
+
+        public List<ProductModel> GetProductBySupplier(string id)
+        {
+            return _products.Find(products => products.SupplierId == id).ToList();
         }
 
         public List<string> GetSupplierByName(string id)
