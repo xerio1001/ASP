@@ -1,34 +1,107 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Diagnostics;
+using Project.Services;
 
 namespace Project.Controllers
 {
     public class UserController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly UserService userService;
 
-        public UserController(ILogger<HomeController> logger)
+        public UserController(UserService userService)
         {
-            _logger = logger;
+            this.userService = userService;
         }
 
-        public IActionResult Login()
+        // GET: UserController
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(IFormCollection collection)
+        {
+            try
+            {
+                userService.Create(collection["email"], collection["password"]);
+
+                return RedirectToAction(nameof(Register));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: UserController/Details/5
+        public ActionResult Details(string id)
         {
             return View();
         }
 
-        public IActionResult Register()
+        // GET: UserController/Create
+        public ActionResult Create()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        // POST: UserController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IFormCollection collection)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: UserController/Edit/5
+        public ActionResult Edit(string id)
+        {
+            return View();
+        }
+
+        // POST: UserController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(string id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: UserController/Delete/5
+        public ActionResult Delete(string id)
+        {
+            return View();
+        }
+
+        // POST: UserController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(string id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
