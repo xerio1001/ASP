@@ -4,25 +4,11 @@
     ViewData["Title"] = "Producten";
 }
 
-<h1>Producten</h1>
+<div class="h1-nodec mt-5">
+    <h1>Producten</h1>
+</div>
 
-Leveranciers
-<hr style="margin-top: 0%;"/>
-
-@foreach(var item in ViewBag.displaySuppliers)
-{
-    <div class="row mb-1">
-        <div class="col-2">
-            @item.Supplier
-        </div>
-        <div class="col-2">
-            @Html.ActionLink("Bekijk al mijn producten", "Index", new{ id=item.Id })
-        </div>
-    </div>
-}
-<hr style="margin-top: 1%;"/>
-
-<table class="table table-hover">
+<table class="table">
     <thead class="table-dark">
         <tr>
             <th>
@@ -40,9 +26,9 @@ Leveranciers
     <tbody>
 @foreach (var item in Model) 
 {    
-        @if(item.AmountInStock <= 10 && item.AmountInStock > 0)
+        @if(item.AmountInStock <= 5 && item.AmountInStock > 0)
         {
-            <tr class="table-warning" onclick="location.href='@Url.Action("Details", "Product", new { id=item.Id })'; return false;" style="cursor: grab;">
+            <tr class="table-warning">
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -79,7 +65,7 @@ Leveranciers
         }
         else if(item.AmountInStock == 0)
         {
-            <tr class="table-danger" onclick="location.href='@Url.Action("Details", "Product", new { id=item.Id })'; return false;" style="cursor: grab;">
+            <tr class="table-danger">
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -116,7 +102,7 @@ Leveranciers
         }
         else
         {
-            <tr onclick="location.href='@Url.Action("Details", "Product", new { id=item.Id })'; return false;" style="cursor: grab;">
+            <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -156,6 +142,45 @@ Leveranciers
 </table>
 
 <a asp-action="Create">Voeg toe</a> | 
-@Html.ActionLink("Bekijk alle producten", "Index", new{ id="" }) |
+<a asp-controller="Product" asp-action="Order"><span id="home-link">Bestellen</span></a> |
 <a asp-controller="Home" asp-action="Index"><span id="home-link">Home</span></a>
+
+
+
+<div class="h1-nodec">
+    <h1>Leveranciers</h1>
+</div>
+
+<table class="table">
+    <thead class="table-dark">
+        <th>
+            <div>
+                Naam
+            </div>
+        </th>
+        <th>
+            <div class="float-end justify-content-end pe-4">
+                Bekijken
+            </div>
+        </th>
+    </thead>
+    <tbody>
+
+@foreach(var item in ViewBag.displaySuppliers)
+{
+    <tr>
+        <td>
+            @item.Supplier
+        </td>
+        <td class="float-end justify-content-end pe-4">
+            <a href="@Url.Action("Index", "Product", new{ id=item.Id })">
+                <img src="~/img/eyeSmall.png">
+            </a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>
+
+@Html.ActionLink("Bekijk alle producten", "Index", new{ id="" })
 
