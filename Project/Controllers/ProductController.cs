@@ -29,7 +29,10 @@ namespace Project.Controllers
 
             ViewBag.displaySuppliers = supplierModel;
 
-            if(id == "" || id == null)
+            MultiSelectList supplierList = new MultiSelectList(suppliers, "Id", "Supplier");
+            ViewBag.suppliers = supplierList;
+
+            if (id == "" || id == null)
             {
                 return View(productService.GetAllProducts());
             }
@@ -87,6 +90,7 @@ namespace Project.Controllers
                 newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
                 newProduct.Barcode = collection["Barcode"];
+                newProduct.Ordered = collection["Ordered"].Contains("true");
 
                 productService.Create(newProduct);
 

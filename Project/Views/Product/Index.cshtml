@@ -4,6 +4,13 @@
     ViewData["Title"] = "Producten";
 }
 
+
+@Html.DropDownListFor(model => model.SupplierId, (MultiSelectList)ViewBag.suppliers, new{@class = "listbox"})
+
+
+@Html.ActionLink("Bekijk alle producten", "Index", new{ id=""})
+
+
 <div class="h1-nodec mt-5">
     <h1>Producten</h1>
 </div>
@@ -19,6 +26,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AmountInStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ordered)
             </th>
             <th></th>
         </tr>
@@ -37,6 +47,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AmountInStock)
+                </td>
+                <td class="cursor-notAllowed">
+                    @Html.DisplayFor(modelItem => item.Ordered)
                 </td>
                 <td>
                     <div class="row float-end justify-content-end pe-4">
@@ -75,6 +88,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.AmountInStock)
                 </td>
+                <td class="cursor-notAllowed">
+                    @Html.DisplayFor(modelItem => item.Ordered)
+                </td>
                 <td>
                     <div class="row float-end justify-content-end pe-4">
 
@@ -112,6 +128,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.AmountInStock)
                 </td>
+                <td class="cursor-notAllowed">
+                    @Html.DisplayFor(modelItem => item.Ordered)
+                </td>
                 <td>
                     <div class="row float-end justify-content-end pe-4">
 
@@ -144,43 +163,3 @@
 <a asp-action="Create">Voeg toe</a> | 
 <a asp-controller="Product" asp-action="Order"><span id="home-link">Bestellen</span></a> |
 <a asp-controller="Home" asp-action="Index"><span id="home-link">Home</span></a>
-
-
-
-<div class="h1-nodec">
-    <h1>Leveranciers</h1>
-</div>
-
-<table class="table">
-    <thead class="table-dark">
-        <th>
-            <div>
-                Naam
-            </div>
-        </th>
-        <th>
-            <div class="float-end justify-content-end pe-4">
-                Bekijken
-            </div>
-        </th>
-    </thead>
-    <tbody>
-
-@foreach(var item in ViewBag.displaySuppliers)
-{
-    <tr>
-        <td>
-            @item.Supplier
-        </td>
-        <td class="float-end justify-content-end pe-4">
-            <a href="@Url.Action("Index", "Product", new{ id=item.Id })">
-                <img src="~/img/eyeSmall.png">
-            </a>
-        </td>
-    </tr>
-}
-    </tbody>
-</table>
-
-@Html.ActionLink("Bekijk alle producten", "Index", new{ id="" })
-
