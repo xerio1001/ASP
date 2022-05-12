@@ -32,7 +32,9 @@
                     </div>
                 </th>
                 <th>
-                    besteld
+                    <div class="float-end justify-content-end pe-1">
+                        besteld
+                    </div> 
                 </th>
             </tr>
         </thead>
@@ -51,8 +53,8 @@
                         </div>
                     </td>
                     <td>
-                        <div>
-                            @Html.CheckBoxFor(modelItem => item.Ordered)
+                        <div class="float-end justify-content-end pe-4">
+                            @Html.CheckBox("itemId_"+item.Id, item.Ordered)
                         </div>
                     </td>
                 </tr>

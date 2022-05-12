@@ -4,46 +4,24 @@
     ViewData["Title"] = "Producten";
 }
 
-<table class="table">
-    <thead class="table-dark">
-        <th>
-            <div>
-                Leverancier
-            </div>
-        </th>
-        <th>
-            <div class="float-end justify-content-end pe-4">
-                Bekijk
-            </div>
-        </th>
-    </thead>
-    <tbody>
-        @foreach(var item in ViewBag.displaySuppliers)
-        {
-            <tr>
-                <td>
-                    <div>
-                        @item.Supplier
-                    </div>
-                </td>
-                <td>
-                    <div class="float-end justify-content-end pe-4">
-                        <a href="@Url.Action("Index", "Product", new{ id=item.Id})">
-                            <img src="~/img/eyeSmall.png" />
-                        </a>
-                    </div>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-@Html.ActionLink("Bekijk alle producten", "Index", new{ id=""})
-
-
 
 <div class="h1-nodec mt-5">
     <h1>Producten</h1>
+</div>
+
+<div class="row">
+    <div class="col-2 nodec">
+        @Html.ActionLink("Bekijk alle producten", "Index", new{ id=""})
+    </div>
+
+    <div class="col-10 nodec">
+        @foreach(var item in ViewBag.displaySuppliers)
+        {           
+            <a href="@Url.Action("Index", "Product", new{ id=item.Id})" class="float-end">
+                <span>@item.Supplier |&nbsp</span>
+            </a>
+        }
+    </div>
 </div>
 
 <table class="table">

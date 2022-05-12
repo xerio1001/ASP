@@ -58,7 +58,21 @@ namespace Project.Controllers
         {
             try
             {
-                string ordered = collection["Besteld"];
+                List<string> checkedForOrder = new();
+                ProductModel newProduct = new();
+
+                foreach(var item in collection)
+                {
+                    if (item.Key.Contains("itemId_"))
+                    {
+                        string id = item.Key.Substring(7);
+
+                        ProductModel product = productService.GetOne(id);
+                        product.Ordered = item.Value.Contains("true");
+
+                        productService.Update(id, product);
+                    }
+                }
 
                 return RedirectToAction(nameof(Index));
             }
