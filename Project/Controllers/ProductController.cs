@@ -29,9 +29,6 @@ namespace Project.Controllers
 
             ViewBag.displaySuppliers = supplierModel;
 
-            MultiSelectList supplierList = new MultiSelectList(suppliers, "Id", "Supplier");
-            ViewBag.suppliers = supplierList;
-
             if (id == "" || id == null)
             {
                 return View(productService.GetAllProducts());
