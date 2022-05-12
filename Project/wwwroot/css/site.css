@@ -129,11 +129,35 @@ a:hover, #home-link a:hover {
 .animate {
     animation: mymove 4s infinite;
 }
-
 @keyframes mymove {
     0% {transform: rotate(0deg);}
     25% {transform: rotate(90deg);}
     50% {transform: rotate(180deg);}
     75% {transform: rotate(270deg);}
     100% {transform: rotate(360deg);}
+}
+
+.animate-danger {
+    animation: changeColorDanger 5s infinite;
+}
+@keyframes changeColorDanger {
+    0% {
+        background-color: #dc3545;
+    }
+
+    25% {
+        background-color: #d96a75;
+    }
+
+    50% {
+        background-color: #F6F6F6;
+    }
+
+    75% {
+        background-color: #d96a75;
+    }
+
+    100% {
+        background-color: #dc3545;
+    }
 }
