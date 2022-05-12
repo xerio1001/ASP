@@ -63,6 +63,9 @@ input[type="submit"] {
 
 select{
     margin-top: 2%;
+    width: 50%;
+    height: auto;
+    text-align: center; 
 }
 
 label{
