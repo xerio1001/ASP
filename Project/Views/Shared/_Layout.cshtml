@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom bg-black box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #2C2F33;">
             <div class="container-fluid">
                 <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Stockbeheer</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -26,16 +26,13 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="Index">Stock</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="Order">Bestellen</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="OrderOverview">Bestellen</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Supplier" asp-action="Index">Leveranciers</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto flex-grow-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Login">Login</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Register">Register</a>
                         </li>
@@ -50,7 +47,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted bg-black">
+    <footer class="border-top footer text-muted" style="background-color: #2C2F33;">
         <div class="container text-light">
             &copy; 2022 - Stockbeheer - CVO De Verdieping
         </div>

@@ -5,14 +5,23 @@
 }
 
 
-@Html.DropDownListFor(model => model.SupplierId, (MultiSelectList)ViewBag.suppliers, new{@class = "listbox"})
-
-
-@Html.ActionLink("Bekijk alle producten", "Index", new{ id=""})
-
-
 <div class="h1-nodec mt-5">
     <h1>Producten</h1>
+</div>
+
+<div class="row">
+    <div class="col-2 nodec">
+        @Html.ActionLink("Bekijk alle producten", "Index", new{ id=""})
+    </div>
+
+    <div class="col-10 nodec">
+        @foreach(var item in ViewBag.displaySuppliers)
+        {           
+            <a href="@Url.Action("Index", "Product", new{ id=item.Id})" class="float-end">
+                <span>@item.Supplier |&nbsp</span>
+            </a>
+        }
+    </div>
 </div>
 
 <table class="table">
@@ -56,19 +65,19 @@
 
                         <div class="col-2">
                             <a href="@Url.Action("Edit", "Product", new { id=item.Id })">
-                                <img src="~/img/iconEdit.png">
+                                <img src="~/img/iconEdit.png" style="height: 60%;">
                             </a>
                         </div>
 
                         <div class="col-2 ms-2 me-2">
                             <a href="@Url.Action("Details", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDetail.png">
+                                <img src="~/img/iconDetail.png" style="height: 60%;">
                             </a>
                         </div>
 
-                            <div class="col-2">
+                        <div class="col-2">
                             <a href="@Url.Action("Delete", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDelete.png">
+                                <img src="~/img/iconDelete.png" style="height: 60%;">
                             </a>
                         </div>
 
@@ -78,7 +87,7 @@
         }
         else if(item.AmountInStock == 0)
         {
-            <tr class="table-danger">
+            <tr class="animate-danger">
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -96,19 +105,19 @@
 
                         <div class="col-2">
                             <a href="@Url.Action("Edit", "Product", new { id=item.Id })">
-                                <img src="~/img/iconEdit.png">
+                                <img src="~/img/iconEdit.png" style="height: 60%;">
                             </a>
                         </div>
 
                         <div class="col-2 ms-2 me-2">
                             <a href="@Url.Action("Details", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDetail.png">
+                                <img src="~/img/iconDetail.png" style="height: 60%;">
                             </a>
                         </div>
 
-                            <div class="col-2">
+                        <div class="col-2">
                             <a href="@Url.Action("Delete", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDelete.png">
+                                <img src="~/img/iconDelete.png" style="height: 60%;">
                             </a>
                         </div>
 
@@ -136,19 +145,19 @@
 
                         <div class="col-2">
                             <a href="@Url.Action("Edit", "Product", new { id=item.Id })">
-                                <img src="~/img/iconEdit.png">
+                                <img src="~/img/iconEdit.png" style="height: 60%;">
                             </a>
                         </div>
 
                         <div class="col-2 ms-2 me-2">
                             <a href="@Url.Action("Details", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDetail.png">
+                                <img src="~/img/iconDetail.png" style="height: 60%;">
                             </a>
                         </div>
 
                         <div class="col-2">
                             <a href="@Url.Action("Delete", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDelete.png">
+                                <img src="~/img/iconDelete.png" style="height: 60%;">
                             </a>
                         </div>
 
@@ -161,5 +170,5 @@
 </table>
 
 <a asp-action="Create">Voeg toe</a> | 
-<a asp-controller="Product" asp-action="Order"><span id="home-link">Bestellen</span></a> |
+<a asp-controller="Product" asp-action="OrderOverview"><span id="home-link">Bestellen</span></a> |
 <a asp-controller="Home" asp-action="Index"><span id="home-link">Home</span></a>

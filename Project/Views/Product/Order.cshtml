@@ -4,71 +4,68 @@
     ViewData["Title"] = "Producten";
 }
 
-<div class="h1-nodec mt-5">
-    <h1>Bestellen</h1>
+<div class="row">
+
+    <div class="col-10 h1-nodec mt-5">
+        <h1>Bestellen</h1>
+    </div>
+    <div class="col-2 mt-5" style="text-align: right;">
+        <a href="mailto:@ViewBag.mailTo">
+            <img src="~/img/mail.png">
+        </a>
+    </div>
+
 </div>
 
-<table class="table">
-    <thead class="table-dark">
-        <tr>
-            <th>
-                Leverancier
-            </th>
-            <th>
-                Product
-            </th>
-            <th>
-                In Stock
-            </th>
-            <th>
-                Besteld
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-
-@foreach(var item in Model)
-{
-    if(item.AmountInStock <= 5)
-    {
-        <tr>
-            <td>
-                @foreach(var supplier in ViewBag.displaySuppliers)
-                {
-                    if(item.SupplierId == supplier.Id)
-                    {
-                        <div class="col-2">
-                            @supplier.Supplier
+<form asp-action="Order">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    <div>
+                        Product
+                    </div>
+                </th>
+                <th>
+                    <div>
+                        Stock
+                    </div>
+                </th>
+                <th>
+                    <div class="float-end justify-content-end pe-1">
+                        besteld
+                    </div> 
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div>
+                            @Html.DisplayFor(modelItem => item.Name)
                         </div>
-                    }         
-                }
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.AmountInStock
-            </td>
-            <td>
-                @if(item.Ordered == false)
-                {
-                    <img src="~/img/false.png">
-                }
-                else if(item.Ordered == true)
-                {
-                    <img src="~/img/check.png">
-                }
-                else
-                {
-                    <span style="color: red;">Verkeerde waarde ingelezen</span>       
-                }
-            </td>
-        </tr>
-    }
-}
+                    </td>
+                    <td>
+                        <div>
+                            @Html.DisplayFor(modelItem => item.AmountInStock)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="float-end justify-content-end pe-4">
+                            @Html.CheckBox("itemId_"+item.Id, item.Ordered)
+                        </div>
+                    </td>
+                </tr>
+            }    
+        </tbody>
+    </table>
 
-    </tbody>
-</table>
+    <div>
+        <input type="submit" value="Besteld" class="btn btn-primary" />
+    </div>
+</form>
 
 <a asp-controller="Home" asp-action="Index"><span id="home-link">Home</span></a> |
-<a asp-controller="Product" asp-action="Index"><span id="home-link">Producten</span></a>
+<a asp-controller="Product" asp-action="OrderOverview"><span id="home-link">Terug</span></a>

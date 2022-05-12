@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Project.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Producten";
+}
+
+
+<div class="h1-nodec mt-5">
+    <h1>Bestellen</h1>
+</div>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                <div>
+                    Leverancier
+                </div>
+            </th>
+            <th>
+                <div>
+                    Email
+                </div>
+            </th>
+            <th>
+                <div class="float-end justify-content-end pe-4">
+                    Bekijk
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach(var supplier in ViewBag.suppliersWithoutStock)
+        {
+            <tr
+            >
+                <td>
+                    <div>
+                        @supplier.Supplier
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        @supplier.EmailAddress
+                    </div>
+                </td>
+                <td>
+                    <div class="float-end justify-content-end pe-4">
+                        <a href="@Url.Action("Order","Product", new{id=supplier.Id})">
+                            <img src="~/img/eyeSmall.png">
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Home" asp-action="Index"><span id="home-link">Home</span></a> |
+<a asp-controller="Product" asp-action="Index"><span id="home-link">Producten</span></a>
