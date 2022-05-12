@@ -29,5 +29,9 @@ namespace Project.Models
         [DisplayName("Barcode")]
         [BsonElement("barcode")]
         public string Barcode { get; set; }
+
+        [DisplayName("Besteld")]
+        [BsonElement("ordered")]
+        public bool Ordered { get; set; }
     }
 }

@@ -29,7 +29,10 @@ namespace Project.Controllers
 
             ViewBag.displaySuppliers = supplierModel;
 
-            if(id == "" || id == null)
+            MultiSelectList supplierList = new MultiSelectList(suppliers, "Id", "Supplier");
+            ViewBag.suppliers = supplierList;
+
+            if (id == "" || id == null)
             {
                 return View(productService.GetAllProducts());
             }
@@ -37,7 +40,21 @@ namespace Project.Controllers
             {
                 return View(productService.GetProductBySupplier(id));
             }
-            
+        }
+
+        public ActionResult Order()
+        {
+            List<SupplierModel> supplierModel = new List<SupplierModel>();
+            List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
+
+            foreach (SupplierModel supplier in suppliers)
+            {
+                supplierModel.Add(supplier);
+            }
+
+            ViewBag.displaySuppliers = supplierModel;
+
+            return View(productService.GetAllProducts());
         }
 
         // GET: ProductController/Details/5
@@ -73,6 +90,7 @@ namespace Project.Controllers
                 newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
                 newProduct.Barcode = collection["Barcode"];
+                newProduct.Ordered = collection["Ordered"].Contains("true");
 
                 productService.Create(newProduct);
 
@@ -108,6 +126,8 @@ namespace Project.Controllers
                 newProduct.AmountInStock = int.Parse(collection["AmountInStock"]);
                 newProduct.SupplierId = collection["SupplierId"];
                 newProduct.Barcode = collection["Barcode"];
+                newProduct.Ordered = collection["Ordered"].Contains("true");
+                //newProduct.Ordered = Convert.ToBoolean(collection["Ordered"].First()); <- Werkt ook.
 
                 productService.Update(id, newProduct);
 

@@ -86,6 +86,15 @@ namespace Project.Controllers
         {
             try
             {
+                SupplierModel newSupplier = supplierService.GetOne(id);
+
+                newSupplier.Supplier = collection["Supplier"];
+                newSupplier.Address = collection["Address"];
+                newSupplier.Phonenumber = collection["Phonenumber"];
+                newSupplier.EmailAddress = collection["EmailAddress"];
+
+                supplierService.Update(id, newSupplier);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
