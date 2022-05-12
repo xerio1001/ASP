@@ -39,19 +39,33 @@ namespace Project.Controllers
             }
         }
 
-        public ActionResult Order()
+        public ActionResult OrderOverview()
         {
-            List<SupplierModel> supplierModel = new List<SupplierModel>();
-            List<SupplierModel> suppliers = supplierService.GetAllSuppliers();
+            ViewBag.suppliersWithoutStock = supplierService.GetSupplierWithoutEnoughStock();
 
-            foreach (SupplierModel supplier in suppliers)
+            return View();
+        }
+
+        public ActionResult Order(string id)
+        {
+            ViewBag.mailTo = supplierService.GetSupplierMail(id);
+            return View(supplierService.GetItemOfPickedSupplier(id));
+        }
+        // POST: ProductController/Order
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Order(IFormCollection collection)
+        {
+            try
             {
-                supplierModel.Add(supplier);
+                string ordered = collection["Besteld"];
+
+                return RedirectToAction(nameof(Index));
             }
-
-            ViewBag.displaySuppliers = supplierModel;
-
-            return View(productService.GetAllProducts());
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: ProductController/Details/5
@@ -124,7 +138,7 @@ namespace Project.Controllers
                 newProduct.SupplierId = collection["SupplierId"];
                 newProduct.Barcode = collection["Barcode"];
                 newProduct.Ordered = collection["Ordered"].Contains("true");
-                //newProduct.Ordered = Convert.ToBoolean(collection["Ordered"].First()); <- Werkt ook.
+                //newProduct.Ordered = Convert.ToBoolean(collection["Ordered"].First()); //<- Werkt ook.
 
                 productService.Update(id, newProduct);
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "URy2MTAVK0huXSvq4QUuPVX4M4NJ2Y/vmQS7OyXkBPk=",
+  "Hash": "6pH+FU6g5G2ET2az9DuWAIpm1HHRDrZhe8djU3R5d9k=",
   "Source": "Project",
   "BasePath": "_content/Project",
   "Mode": "Default",
@@ -236,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\iconEdit.png"
+    },
+    {
+      "Identity": "C:\\Users\\JUD\\Documents\\ASP\\Project\\wwwroot\\img\\mail.png",
+      "SourceId": "Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JUD\\Documents\\ASP\\Project\\wwwroot\\",
+      "BasePath": "_content/Project",
+      "RelativePath": "img/mail.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\mail.png"
     },
     {
       "Identity": "C:\\Users\\JUD\\Documents\\ASP\\Project\\wwwroot\\img\\order.png",
