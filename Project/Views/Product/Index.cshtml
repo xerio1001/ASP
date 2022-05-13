@@ -45,128 +45,58 @@
     <tbody>
 @foreach (var item in Model) 
 {    
-        @if(item.AmountInStock <= 5 && item.AmountInStock > 0)
-        {
-            <tr class="table-warning">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AmountInStock)
-                </td>
-                <td class="cursor-notAllowed">
-                    @Html.DisplayFor(modelItem => item.Ordered)
-                </td>
-                <td>
-                    <div class="row float-end justify-content-end pe-4">
+    string classType = "";
+    if(item.AmountInStock == 0)
+    {
+        classType ="animate-danger";
+    }
+    else if(item.AmountInStock <= 5)
+    {
+        classType = "warning";
+    }
+    else
+    {
+        classType = "";
+    }
+    <tr class="@classType">
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountInStock)
+        </td>
+        <td class="cursor-notAllowed">
+            @Html.DisplayFor(modelItem => item.Ordered)
+        </td>
+        <td>
+            <div class="row float-end justify-content-end pe-4">
 
-                        <div class="col-2">
-                            <a href="@Url.Action("Edit", "Product", new { id=item.Id })">
-                                <img src="~/img/iconEdit.png" style="height: 60%;">
-                            </a>
-                        </div>
+                <div class="col-2">
+                    <a href="@Url.Action("Edit", "Product", new { id=item.Id })">
+                        <img src="~/img/iconEdit.png" style="height: 60%;">
+                    </a>
+                </div>
 
-                        <div class="col-2 ms-2 me-2">
-                            <a href="@Url.Action("Details", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDetail.png" style="height: 60%;">
-                            </a>
-                        </div>
+                <div class="col-2 ms-2 me-2">
+                    <a href="@Url.Action("Details", "Product", new { id=item.Id })">
+                        <img src="~/img/iconDetail.png" style="height: 60%;">
+                    </a>
+                </div>
 
-                        <div class="col-2">
-                            <a href="@Url.Action("Delete", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDelete.png" style="height: 60%;">
-                            </a>
-                        </div>
+                <div class="col-2">
+                    <a href="@Url.Action("Delete", "Product", new { id=item.Id })">
+                        <img src="~/img/iconDelete.png" style="height: 60%;">
+                    </a>
+                </div>
 
-                    </div>
-                </td>
-            </tr>
-        }
-        else if(item.AmountInStock == 0)
-        {
-            <tr class="animate-danger">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AmountInStock)
-                </td>
-                <td class="cursor-notAllowed">
-                    @Html.DisplayFor(modelItem => item.Ordered)
-                </td>
-                <td>
-                    <div class="row float-end justify-content-end pe-4">
-
-                        <div class="col-2">
-                            <a href="@Url.Action("Edit", "Product", new { id=item.Id })">
-                                <img src="~/img/iconEdit.png" style="height: 60%;">
-                            </a>
-                        </div>
-
-                        <div class="col-2 ms-2 me-2">
-                            <a href="@Url.Action("Details", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDetail.png" style="height: 60%;">
-                            </a>
-                        </div>
-
-                        <div class="col-2">
-                            <a href="@Url.Action("Delete", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDelete.png" style="height: 60%;">
-                            </a>
-                        </div>
-
-                    </div>
-                </td>
-            </tr>
-        }
-        else
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AmountInStock)
-                </td>
-                <td class="cursor-notAllowed">
-                    @Html.DisplayFor(modelItem => item.Ordered)
-                </td>
-                <td>
-                    <div class="row float-end justify-content-end pe-4">
-
-                        <div class="col-2">
-                            <a href="@Url.Action("Edit", "Product", new { id=item.Id })">
-                                <img src="~/img/iconEdit.png" style="height: 60%;">
-                            </a>
-                        </div>
-
-                        <div class="col-2 ms-2 me-2">
-                            <a href="@Url.Action("Details", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDetail.png" style="height: 60%;">
-                            </a>
-                        </div>
-
-                        <div class="col-2">
-                            <a href="@Url.Action("Delete", "Product", new { id=item.Id })">
-                                <img src="~/img/iconDelete.png" style="height: 60%;">
-                            </a>
-                        </div>
-
-                    </div>
-                </td>
-            </tr>
-        }          
+            </div>
+        </td>
+    </tr>     
 }
-    </tbody>
+</tbody>
 </table>
 
 <a asp-action="Create">Voeg toe</a> | 

@@ -74,7 +74,7 @@ namespace Project.Controllers
                     }
                 }
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(OrderOverview));
             }
             catch
             {
